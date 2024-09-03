@@ -7,7 +7,7 @@ const themeSlice = createSlice({
     },
     reducers:{
         changeColor:(state,action)=>{
-            console.log("action",action)
+            // console.log("action",action)
             state.searchColor = action.payload;
         }
     }
