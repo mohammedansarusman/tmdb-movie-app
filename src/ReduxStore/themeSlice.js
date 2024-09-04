@@ -4,6 +4,7 @@ const themeSlice = createSlice({
     name:"theme",
     initialState: {
         searchColor: "bg-slate-700",
+        longSearchBar: true,
     },
     reducers:{
         changeColor:(state,action)=>{

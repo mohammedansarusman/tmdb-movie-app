@@ -13,13 +13,24 @@ import { IoIosPeople } from "react-icons/io";
 
 const NavigationBar = () => {
   const searchBarColor = useSelector((store)=>store.theme.searchColor);
+  const longSearchBarWidth = useSelector((store)=>store.theme.longSearchbar);
   const dispatch = useDispatch();
   console.log(searchBarColor);
+  const handleFocus = () =>{
+    dispatch(changeColor('bg-rose-800'));
+    console.log(window.innerWidth)
+    if(window.innerWidth<=1150){
+
+    }
+  };
+  const handleBlur = () =>{
+    dispatch(changeColor('bg-slate-700'))
+  }
   return (
     <div>
       {console.log("rendering")}
-        <div className="xl:w-full xl:h-[60px] xl:bg-green-500 xl:flex xl:px-[3%]
-          lg:bg-blue-500 lg:h-[60px] lg:flex lg:px-[3%]">
+      <div className="xl:w-full xl:h-[60px] xl:bg-green-500 xl:flex xl:px-[3%]
+                    lg:bg-blue-500 lg:h-[60px] lg:flex lg:px-[3%] lg:relative ">
         {/* navigation 70% started */}
         <div className="w-[70%] h-full flex flex-row justify-between gap-5">
           <div className='flex w-[40%] items-center'>
@@ -31,8 +42,8 @@ const NavigationBar = () => {
             <div 
               className={`xl:w-[300px] xl:h-7 xl:rounded-full ${searchBarColor} xl:ml-2 lg:flex xl:justify-between xl:items-center xl:px-3
                           lg:w-[150px] lg:h-7 lg:rounded-full ${searchBarColor} lg:ml-2 lg:flex lg:justify-between lg:items-center lg:px-3`}
-              onFocus={()=>dispatch(changeColor('bg-rose-800'))}
-              onBlur={()=>dispatch(changeColor('bg-slate-700'))}
+              onFocus={handleFocus}
+              onBlur={handleBlur}
               
             >
                 <input 
@@ -70,6 +81,7 @@ const NavigationBar = () => {
         <div className="w-[30%] h-full flex items-center justify-end">
           <div className="w-[40px] h-[40px] bg-rose-800 rounded-full text-white flex items-center justify-center font-extrabold">A</div>
         </div>
+        <div className='hidden lg:block xl:hidden lg:bg-yellow-300 lg:w-full lg:h-10 lg:absolute lg:transform lg:-translate-x-1/2'></div>
       </div>
     </div>
   )
