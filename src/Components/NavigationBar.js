@@ -1,4 +1,4 @@
-import React from 'react'
+import React,{useState} from 'react'
 import { FaSearch } from "react-icons/fa";
 import { useSelector,useDispatch } from 'react-redux';
 import {changeColor} from '../ReduxStore/themeSlice';
@@ -13,7 +13,8 @@ import { IoIosPeople } from "react-icons/io";
 
 const NavigationBar = () => {
   const searchBarColor = useSelector((store)=>store.theme.searchColor);
-  const longSearchBarWidth = useSelector((store)=>store.theme.longSearchbar);
+  const longSearchBarWidth = useSelector((store)=>store.theme.longSearchBar);
+
   const dispatch = useDispatch();
   console.log(searchBarColor);
   const handleFocus = () =>{
@@ -81,7 +82,7 @@ const NavigationBar = () => {
         <div className="w-[30%] h-full flex items-center justify-end">
           <div className="w-[40px] h-[40px] bg-rose-800 rounded-full text-white flex items-center justify-center font-extrabold">A</div>
         </div>
-        <div className='hidden lg:block xl:hidden lg:bg-yellow-300 lg:w-full lg:h-10 lg:absolute lg:transform lg:-translate-x-1/2'></div>
+        {longSearchBarWidth && (<div className='hidden lg:block xl:hidden lg:bg-yellow-300 lg:w-[95%] lg:h-[80%] lg:absolute lg:left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 lg:rounded-full'></div>)}
       </div>
     </div>
   )
