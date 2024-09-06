@@ -1,31 +1,34 @@
-import React,{useState} from 'react'
+import React from 'react'
 import { FaSearch } from "react-icons/fa";
-import { useSelector,useDispatch } from 'react-redux';
-import {changeColor} from '../ReduxStore/themeSlice';
+import { useSelector, useDispatch } from 'react-redux';
+import { changeColor, changeSearchBar } from '../ReduxStore/themeSlice';
 import { GoHome } from "react-icons/go";
 import { BiCameraMovie } from "react-icons/bi";
 import { GiTv } from "react-icons/gi";
 import { IoIosPeople } from "react-icons/io";
-
-
-
+import LongSearchBar from './LongSearchBar';
 
 
 const NavigationBar = () => {
-  const searchBarColor = useSelector((store)=>store.theme.searchColor);
-  const longSearchBarWidth = useSelector((store)=>store.theme.longSearchBar);
-
+  const searchBarColor = useSelector((store) => store.theme.searchColor);
+  const longSearchBarWidth = useSelector((store) => store.theme.longSearchBar);
   const dispatch = useDispatch();
-  console.log(searchBarColor);
-  const handleFocus = () =>{
-    dispatch(changeColor('bg-rose-800'));
-    console.log(window.innerWidth)
-    if(window.innerWidth<=1150){
-
+  
+  const handleResize = () => {
+    if (window.innerWidth <= 1150) {
+      dispatch(changeSearchBar(true))
+    } else {
+      dispatch(changeSearchBar(false))
     }
+  }
+
+  const handleFocus = () => {
+    dispatch(changeColor('bg-rose-800'));
+    window.addEventListener("resize", handleResize)
   };
-  const handleBlur = () =>{
+  const handleBlur = () => {
     dispatch(changeColor('bg-slate-700'))
+    window.removeEventListener('resize', handleResize)
   }
   return (
     <div>
@@ -40,25 +43,24 @@ const NavigationBar = () => {
             <h1 className="text-3xl font-bold text-red-500 pl-2">F</h1>
             <h1 className="text-center text-3xl font-bold text-white ">low</h1>
             {/* Search bar */}
-            <div 
-              className={`xl:w-[300px] xl:h-7 xl:rounded-full ${searchBarColor} xl:ml-2 lg:flex xl:justify-between xl:items-center xl:px-3
-                          lg:w-[150px] lg:h-7 lg:rounded-full ${searchBarColor} lg:ml-2 lg:flex lg:justify-between lg:items-center lg:px-3`}
+            <div
+              className={`xl:w-[full] xl:h-7 xl:rounded-full ${searchBarColor} xl:ml-2 lg:flex xl:justify-between xl:items-center xl:px-3
+                          lg:w-[full] lg:h-7 lg:rounded-full ${searchBarColor} lg:ml-2 lg:flex lg:justify-between lg:items-center lg:px-3`}
               onFocus={handleFocus}
               onBlur={handleBlur}
-              
             >
-                <input 
-                  type="text"
-                  className="w-[90%] bg-transparent focus outline-none text-slate-50"
-                />
-                <FaSearch className = "text-slate-100 cursor-pointer"/>
+              <input
+                type="text"
+                className="w-[90%] bg-transparent focus outline-none text-slate-50"
+              />
+              <FaSearch className="text-slate-100 cursor-pointer" />
             </div>
           </div>
           <div className="xl:w-[60%] xl:text-slate-300 xl:font-bold xl:flex xl:items-center xl:justify-around
                           lg:w-[60%] lg:text-slate-300 lg:font-semibold lg:flex lg:items-center lg:justify-around">
             <div className='xl:px-4 xl:h-[40px] xl:bg-red-300 xl:rounded-full xl:hover:bg-white xl:hover:text-black xl:flex xl:justify-center xl:items-center xl:gap-1
                             lg:px-2 lg:h-[35px] lg:bg-red-400 lg:rounded-full lg:hover:bg-white lg:hover:text-black lg:flex lg:justify-center lg:items-center lg:gap-0'>
-              <GoHome/>
+              <GoHome />
               <h1 className='lg:text-sm xl:text-base'>Home</h1>
             </div>
             <div className='xl:px-4 xl:h-[40px] xl:bg-red-400 xl:rounded-full xl:hover:bg-white xl:hover:text-black xl:flex xl:justify-center xl:items-center xl:gap-1
@@ -73,7 +75,7 @@ const NavigationBar = () => {
             </div>
             <div className='xl:px-4 xl:h-[40px] xl:bg-red-400 xl:rounded-full xl:hover:bg-white xl:hover:text-black xl:flex xl:justify-center xl:items-center xl:gap-1
                             lg:px-2 lg:h-[35px] lg:bg-red-400 lg:rounded-full lg:hover:bg-white lg:hover:text-black lg:flex lg:justify-center lg:items-center lg:gap-0'>
-              <IoIosPeople className=''/>
+              <IoIosPeople className='' />
               <h1 className='lg:text-sm xl:text-base'>People</h1>
             </div>
           </div>
@@ -82,7 +84,7 @@ const NavigationBar = () => {
         <div className="w-[30%] h-full flex items-center justify-end">
           <div className="w-[40px] h-[40px] bg-rose-800 rounded-full text-white flex items-center justify-center font-extrabold">A</div>
         </div>
-        {longSearchBarWidth && (<div className='hidden lg:block xl:hidden lg:bg-yellow-300 lg:w-[95%] lg:h-[80%] lg:absolute lg:left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 lg:rounded-full'></div>)}
+        {longSearchBarWidth && <LongSearchBar/>}
       </div>
     </div>
   )
