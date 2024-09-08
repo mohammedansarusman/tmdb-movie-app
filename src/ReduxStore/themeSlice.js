@@ -5,6 +5,7 @@ const themeSlice = createSlice({
     initialState: {
         searchColor: "bg-slate-700",
         longSearchBar: false,
+        inputSearchBar:"",
     },
     reducers:{
         changeColor:(state,action)=>{
@@ -13,12 +14,15 @@ const themeSlice = createSlice({
         },
         changeSearchBar:(state,action)=>{
             state.longSearchBar = action.payload;
+        },
+        changeInputValue:(state,action)=>{
+            state.inputValue = action.payload;
         }
     }
 });
 
 export default themeSlice.reducer;
-export const {changeColor,changeSearchBar} = themeSlice.actions;
+export const {changeColor,changeSearchBar,changeInputValue} = themeSlice.actions;
 
 // the 'state' means the INITIAL STATE of the searchColor
 // the toggleSearchColor is the DISPATCH AN ACTION IN RECUX
