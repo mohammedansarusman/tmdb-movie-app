@@ -1,8 +1,10 @@
-export const API_OPTIONS = () =>{
+export const API_OPTION = {
     method: 'GET',
     headers: {
       accept: 'application/json',
-      Authorization: '
-    }
-  
-}
+      Authorization:process.env.REACT_APP_API_KEY,
+    },
+};
+
+export const MOVIES_URL = 'https://api.themoviedb.org/3/trending/movie/day?language=en-US'
+export const POSTER_URL = "https://image.tmdb.org/t/p/w220_and_h330_face"
