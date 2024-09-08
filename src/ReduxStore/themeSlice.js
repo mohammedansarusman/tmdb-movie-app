@@ -3,18 +3,20 @@ import { createSlice } from '@reduxjs/toolkit'
 const themeSlice = createSlice({
     name:"theme",
     initialState: {
-        searchColor: "bg-slate-700",
+        searchColor: "bg-gray-950",
         longSearchBar: false,
         inputSearchBar:"",
     },
     reducers:{
+        // action using to change the search bar color
         changeColor:(state,action)=>{
-            // console.log("action",action)
             state.searchColor = action.payload;
         },
         changeSearchBar:(state,action)=>{
             state.longSearchBar = action.payload;
         },
+        
+        // the value/string entering in search bar
         changeInputValue:(state,action)=>{
             state.inputValue = action.payload;
         }
