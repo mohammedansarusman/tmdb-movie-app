@@ -11,6 +11,16 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+/* Hide scrollbar for Chrome, Safari, and Edge */
+.flex {
+  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none;  /* Internet Explorer 10+ */
+}
+
+.flex::-webkit-scrollbar {
+  display: none; /* Safari and Chrome */
+}
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;

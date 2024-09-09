@@ -1,16 +1,16 @@
-import React, { useEffect } from 'react'
-import { API_OPTION, MOVIES_URL } from '../Constants/apiKey'
+import React from 'react'
+import MoviesHome from './MoviesHome';
 
 
 const Browse = () => {
-  const fetchMovies = async () => {
-    const response = await fetch(MOVIES_URL,API_OPTION)
-    const data = await response.json()
-    console.log("result",data)
-  } 
-  useEffect(()=>{fetchMovies()},[]) 
   return (
-    <div className = "w-full h-[100vh] bg-gradient-to-br from-black to-gray-900"></div>
+    <div className="w-full h-[100vh] bg-gradient-to-br from-black to-gray-900 p-4">
+        {/* Sessions Movies */}
+        <MoviesHome />
+        {/* Session TV Shows */}
+        {/* Session People */}
+
+    </div>
   )
 }
 
