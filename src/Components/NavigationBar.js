@@ -59,7 +59,7 @@ const NavigationBar = () => {
             <FaSearch className="text-slate-400 cursor-pointer" />
           </div>
           {/* Navigation Bar  - Home - Movies - People */}
-          <div className="w-full  bg-black text-white flex justify-around items-center bottom-0 right-0 fixed
+          <div className="w-full  bg-black text-white flex justify-around items-center bottom-0 right-0 fixed z-10
                           sm:w-full sm:bg-black sm:text-white sm:flex sm:justify-around sm:items-center sm:bottom-0 sm:right-0 sm:fixed
                           lg:w-[50%] lg:ml-5  lg:text-slate-300 lg:font-semibold lg:flex lg:items-center lg:justify-around lg:static
                           xl:w-[50%] xl:text-slate-300 xl:font-bold xl:flex xl:items-center xl:justify-around xl:static

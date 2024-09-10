@@ -4,18 +4,18 @@ import MovieCard from './MovieCard'
 
 
 
-const MoviesHome = () => {
-    const moviesData = useSelector((store)=>store.movie.moviesResult)
-    const {results} = moviesData;
+const TvHome = () => {
+    const tvData = useSelector((store)=>store.movie.tvResults)
+    const {results} = tvData;
 
     // the componenet will render after getting data from API
-    if(moviesData==="") return null 
+    if(tvData==="") return null 
   return (
     <div>
-        <div className='text-white font-extrabold text-xl opacity-75'>Trending Movies</div>
+        <div className='text-white font-extrabold text-xl opacity-75'>Popular TV Shows</div>
         <div>
             <div className='flex gap-2 mt-3 overflow-scroll'>
-                {results.map((item)=><MovieCard film = {item} key = {item.id}/>)}
+                {results.map((item)=><MovieCard film = {item}/>)}
             </div>
         
         </div>
@@ -25,5 +25,5 @@ const MoviesHome = () => {
   )
 }
 
-export default MoviesHome
+export default TvHome
 // This component will export to Browse compenent
