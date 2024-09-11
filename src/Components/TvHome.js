@@ -15,12 +15,9 @@ const TvHome = () => {
         <div className='text-white font-extrabold text-xl opacity-75'>Popular TV Shows</div>
         <div>
             <div className='flex gap-2 mt-3 overflow-scroll'>
-                {results.map((item)=><MovieCard film = {item}/>)}
+                {results.map((item)=><MovieCard film = {item} key = {item.id}/>)}
             </div>
-        
         </div>
-        
-
     </div>
   )
 }
