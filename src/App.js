@@ -1,11 +1,11 @@
 import NavigationBar from "./Components/NavigationBar";
-import Browse from "./Components/Browse";
+import { Outlet } from "react-router-dom";
 
 function App() {
   return (
     <div className="App">
       <NavigationBar/>
-      <Browse/>
+      <Outlet />
     </div>
   );
 }

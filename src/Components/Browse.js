@@ -15,7 +15,7 @@ const Browse = () => {
 
   
   return (
-    <div className="w-full bg-gradient-to-br from-black to-gray-900 p-4 pb-10">
+    <div className="w-full bg-gradient-to-br from-black to-gray-900 p-4 pb-1 pt-20">
         {/* Sessions Movies */}
         <MoviesHome />
         {/* Session TV Shows */}

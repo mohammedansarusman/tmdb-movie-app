@@ -2,14 +2,49 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './App';
+import Movies from './Components/Movies';
+import Browse from './Components/Browse';
+import Tv from './Components/Tv';
+import People from './Components/People';
+
 import reportWebVitals from './reportWebVitals';
 import { Provider } from 'react-redux';
 import appStore from './ReduxStore/appStore';
+import { createBrowserRouter,RouterProvider } from 'react-router-dom';
 
+const appRouter = createBrowserRouter(
+  [
+    {
+      path:"/",
+      element: <App />,
+      children: [
+        {
+          path:"/",
+          element: <Browse />,
+        },
+        {
+          path:"/movies",
+          element: <Movies />,
+        },
+        {
+          path:"/tv",
+          element: <Tv />,
+        },
+        {
+          path:"/people",
+          element: <People />,
+        }
+      ]
+    },
+    
+  ]
+)
 const root = ReactDOM.createRoot(document.getElementById('root'));
+
 root.render(
   <Provider store={appStore}>
-        <App />
+        {/* <App /> */}
+        <RouterProvider router={appRouter} />
   </Provider>
 );
 

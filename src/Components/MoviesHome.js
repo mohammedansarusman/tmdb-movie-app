@@ -14,7 +14,7 @@ const MoviesHome = () => {
     <div>
         <div className='text-white font-extrabold text-xl opacity-75'>Trending Movies</div>
         <div>
-            <div className='flex gap-2 mt-3 overflow-scroll'>
+            <div className='flex gap-2 overflow-scroll bg-red-500 w-screen h-[350px] items-center'>
                 {results.map((item)=><MovieCard film = {item} key = {item.id}/>)}
             </div>
         

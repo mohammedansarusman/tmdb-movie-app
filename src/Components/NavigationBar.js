@@ -7,6 +7,7 @@ import { BiCameraMovie } from "react-icons/bi";
 import { GiTv } from "react-icons/gi";
 import { IoIosPeople } from "react-icons/io";
 import LongSearchBar from './LongSearchBar';
+import { Link } from 'react-router-dom';
 
 const NavigationBar = () => {
   const searchBarColor = useSelector((store) => store.theme.searchColor);
@@ -23,9 +24,9 @@ const NavigationBar = () => {
   }
   return (
     <div className=''>
-      <div className='w-full h-[1px] bg-orange-300'></div>
-      <div className="w-full h-[60px] bg-black flex-row items-center px-[3%] relative
-                    sm:w-full sm:h-[60px] sm:flex-row sm:items-center sm:px-[3%] sm:relative
+      <div className='w-full h-[1px] bg-orange-300 fixed z-20'></div>
+      <div className="w-full h-[60px] bg-black flex-row items-center px-[3%] fixed z-10
+                    sm:w-full sm:h-[60px] sm:flex-row sm:items-center sm:px-[3%] sm:fixed sm:z-10
                     lg:w-full lg:h-[60px] lg:flex lg:justify-center lg:px-[3%]lg:bg-blue-500
                     xl:w-full xl:h-[60px]xl:flex-row xl:justify-center xl:px-[3%]">
         {/* Logo - search bar - username */}
@@ -65,21 +66,28 @@ const NavigationBar = () => {
                           xl:w-[50%] xl:text-slate-300 xl:font-bold xl:flex xl:items-center xl:justify-around xl:static
           ">
             {/* Home Button */}
+            <Link to = "/">
             <div className='flex flex-col items-center p-3 cursor-pointer hover:text-orange-400
                             lg:px-4 lg:h-[35px]  lg:rounded-full lg:hover:bg-white lg:hover:text-black lg:flex-row lg:justify-center lg:items-center lg:gap-1
                             xl:px-4 xl:h-[40px]  xl:rounded-full xl:hover:bg-white xl:hover:text-black xl:flex-row xl:justify-center xl:items-center xl:gap-1'>
               <GoHome className='text-2xl lg:text-xl' />
               <h1 className='text-xs lg:text-sm xl:text-base '>Home</h1>
             </div>
+            </Link>
+            
             {/* Movie Button */}
+            <Link to="/movies">
             <div className='flex  flex-col items-center p-3 cursor-pointer hover:text-orange-400
                             lg:px-3 lg:h-[35px] lg:rounded-full lg:hover:bg-white lg:hover:text-black lg:flex-row lg:justify-center lg:items-center lg:gap-1
                             xl:px-4 xl:h-[40px] xl:rounded-full xl:hover:bg-white xl:hover:text-black xl:flex-row xl:justify-center xl:items-center xl:gap-1'
             >
-              <BiCameraMovie className='text-2xl lg:text-xl' />
+             <BiCameraMovie className='text-2xl lg:text-xl' />
               <h1 className='lg:text-sm xl:text-base text-xs'>Movies</h1>
             </div>
+            </Link>
+            
             {/* TV Shows Button */}
+            <Link to = "/tv">
             <div className='flex  flex-col items-center p-3 cursor-pointer hover:text-orange-400
                             lg:px-2 lg:h-[35px] lg:rounded-full lg:hover:bg-white lg:hover:text-black lg:flex-row lg:justify-center lg:items-center lg:gap-1
                             xl:px-4 xl:h-[40px] xl:rounded-full xl:hover:bg-white xl:hover:text-black xl:flex xl:justify-center xl:items-center xl:gap-1'
@@ -87,14 +95,19 @@ const NavigationBar = () => {
               <GiTv className='text-2xl lg:text-xl' />
               <h1 className='lg:text-sm xl:text-base text-xs'>TV Shows</h1>
             </div>
+            </Link>
+
             {/* People Button */}
+            <Link to = "/people">
             <div className='flex  flex-col items-center p-3 cursor-pointer hover:text-orange-400
                             lg:px-2 lg:h-[35px] lg:rounded-full lg:hover:bg-white lg:hover:text-black lg:flex-row lg:justify-center lg:items-center lg:gap-1
-                            xl:px-4 xl:h-[40px] xl:rounded-full xl:hover:bg-white xl:hover:text-black xl:flex-row xl:justify-center xl:items-center xl:gap-1
-            '>
+                            xl:px-4 xl:h-[40px] xl:rounded-full xl:hover:bg-white xl:hover:text-black xl:flex-row xl:justify-center xl:items-center xl:gap-1'
+            >
               <IoIosPeople className='text-2xl lg:text-xl' />
               <h1 className='lg:text-sm xl:text-base text-xs'>People</h1>
             </div>
+            </Link>
+
           </div>
           {/* User name */}
           <div className="w-[10%] h-full flex items-center justify-end">
