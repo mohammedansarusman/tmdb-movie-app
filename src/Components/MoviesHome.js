@@ -12,12 +12,16 @@ const MoviesHome = () => {
     if(moviesData==="") return null 
   return (
     <div>
-        <div className='text-white font-extrabold text-xl opacity-75'>Trending Movies</div>
+        <div className='text-white font-extrabold text-xl opacity-75 w-full mt-2'>Trending Movies</div>
         <div>
-            <div className='flex gap-2 overflow-scroll bg-red-500 w-screen h-[350px] items-center'>
+            <div className='flex gap-3 overflow-scroll  w-screen h-[280px] items-center
+                             sm:h-[275px]
+                             md:h-[300px]
+                             lg:h-[310px]
+                             xl:h-[320px]
+            '>
                 {results.map((item)=><MovieCard film = {item} key = {item.id}/>)}
             </div>
-        
         </div>
         
 

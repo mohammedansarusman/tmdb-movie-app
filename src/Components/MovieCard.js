@@ -7,22 +7,25 @@ const MovieCard = (props) => {
   console.log(props.film)
 
   return (
-    // 150 275
-    <div className='rounded-t-xl 
+    <div className='rounded-t-xl
     '>
-      <div className='overflow-hidden rounded-xl w-[150px]'>
+      <div className='overflow-hidden rounded-xl w-[150px] h-[225px]
+                      sm:w-[160px] sm:h-[235px]
+                      md:w-[170px] md:h-[260px]
+                      lg:w-[190px] lg:h-[270px]
+                      xl:w-[200px] xl:h-[280px]'>
         {
           poster_path || profile_path ?
              (<img 
                 src = { POSTER_URL+(poster_path || profile_path)} 
               alt="movie poster"
-              className='rounded-xl hover:scale-105 transition-transform duration-300 w-[150px] h-[225px]'
+              className='rounded-xl hover:scale-105 transition-transform duration-300 w-[100%] h-[100%]'
             />) :
             (
             <img 
               src = {NO_IMAGE} 
               alt="movie poster"
-              className='rounded-xl hover:scale-105 transition-transform duration-300 w-[150px] h-[225px]'
+              className='rounded-xl hover:scale-105 transition-transform duration-300 w-[100%] h-[100%]'
             />)
         }   
       </div>
