@@ -3,7 +3,7 @@ import { Outlet } from "react-router-dom";
 
 function App() {
   return (
-    <div className="App w-full bg-pink-500">
+    <div className="App w-full h-[100%]">
       <NavigationBar/>
       <Outlet />
     </div>

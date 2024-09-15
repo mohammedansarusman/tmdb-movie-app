@@ -4,7 +4,7 @@ import { POSTER_URL,NO_IMAGE } from '../Constants/apiKey';
 
 const MovieCard = (props) => {
   const { title, poster_path,original_name,profile_path } = props.film;
-  console.log(props.film)
+  // console.log("result", props.film)
 
   return (
     <div className='rounded-t-xl
@@ -19,7 +19,7 @@ const MovieCard = (props) => {
              (<img 
                 src = { POSTER_URL+(poster_path || profile_path)} 
               alt="movie poster"
-              className='rounded-xl hover:scale-105 transition-transform duration-300 w-[100%] h-[100%]'
+              className='rounded-xl hover:scale-105 transition-transform duration-600 w-[100%] h-[100%]'
             />) :
             (
             <img 

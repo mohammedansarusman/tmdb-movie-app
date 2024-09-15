@@ -6,6 +6,7 @@ import Movies from './Components/Movies';
 import Browse from './Components/Browse';
 import Tv from './Components/Tv';
 import People from './Components/People';
+import Details from './Components/Details';
 
 import reportWebVitals from './reportWebVitals';
 import { Provider } from 'react-redux';
@@ -33,7 +34,11 @@ const appRouter = createBrowserRouter(
         {
           path:"/people",
           element: <People />,
-        }
+        },
+        {
+          path: "/details/:session/:id",
+          element: <Details />,
+        },
       ]
     },
     

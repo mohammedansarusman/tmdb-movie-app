@@ -1,8 +1,7 @@
 import React from 'react'
 import { useSelector } from 'react-redux';
 import MovieCard from './MovieCard'
-
-
+import { Link } from 'react-router-dom';
 
 const MoviesHome = () => {
     const moviesData = useSelector((store)=>store.movie.moviesResult)
@@ -20,11 +19,16 @@ const MoviesHome = () => {
                              lg:h-[310px]
                              xl:h-[320px]
             '>
-                {results.map((item)=><MovieCard film = {item} key = {item.id}/>)}
+                {
+                  results.map(
+                    (item)=>(
+                      <Link to = {`/details/${item.media_type}/${item.id}`} key = {item.id } >
+                          <MovieCard film = {item} key = {item.id}/>
+                      </Link>
+                  ))
+                }
             </div>
         </div>
-        
-
     </div>
   )
 }
