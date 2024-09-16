@@ -9,7 +9,7 @@ import DetailsMovie from './DetailsMovie';
 const Details = () => {
   const { session, id } = useParams();
   return (
-    <div className='w-screen h-screen flex text-black justify-center items-center' >
+    <div >
       {session === "movie" ? <DetailsMovie movieId={id} /> :
         session === "tv" ? <h1>TV</h1> :
           session === "person" && <h1>Person</h1>
@@ -19,3 +19,5 @@ const Details = () => {
 }
 
 export default Details;
+
+// className='w-screen h-screen flex text-black justify-center items-center'

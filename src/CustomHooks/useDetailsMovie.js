@@ -1,16 +1,18 @@
 import { useEffect } from "react";
 import { API_OPTION, DETAILS_MOVIE } from "../Constants/apiKey"
+import { useDispatch } from "react-redux"
+import { addMovieDetails } from "../ReduxStore/moviesSlice"
 
 const useDetailsMovie = (movieId) =>{
     const id = movieId;
-    console.log("WHAT IS IDBCursor",id)
+    const dispatch = useDispatch();
     const fetchDetailsMovie = async(id) =>{
         const response = await fetch(`${DETAILS_MOVIE}${id}`,API_OPTION)
         const data = await response.json();
-        console.log("Details Movie",data)
+        dispatch(addMovieDetails(data));
+
     }
-    useEffect(()=>{fetchDetailsMovie(1139817)},[])
+    useEffect(()=>{fetchDetailsMovie(id)},[])
 }
 export default useDetailsMovie;
 
-// fetch('https://api.themoviedb.org/3/movie/1064028?language=en-US', options)
