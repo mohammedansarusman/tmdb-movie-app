@@ -4,17 +4,23 @@ import useDetailsMovie from '../CustomHooks/useDetailsMovie';
 import { useSelector } from 'react-redux'
 import Shimmer from './Shimmer';
 import { POSTER_URL } from '../Constants/apiKey';
+import { useMovieVideo } from '../CustomHooks/useMovieVideo';
 
 const DetailsMovie = (props) => {
     const [line,setLine] = useState(2);
     const [loading, setLoading] = useState(false);
     const movie_details = useSelector((store) => store.movie.movieDetails);
     const genres_text = [];
-    // const production_text = [];
+    const trailer_key = useSelector((store)=>store.movie.videoKey);
     const { movieId } = props;
     const { poster_path, title, genres, production_companies,overview } = movie_details
     useDetailsMovie(movieId);
+    useMovieVideo(movieId);
     console.log(movie_details);
+
+    const handleMore = () =>{
+        setLine(5);
+    }
 
     if (movie_details === "") return <Shimmer />;
     genres.map((item)=>genres_text.push(item.name))
@@ -37,7 +43,7 @@ const DetailsMovie = (props) => {
                 {
                     line===2 ? 
                         <p className='text-orange-400 font-semibold cursor-pointer'
-                            onClick = {()=>setLine(5)}
+                            onClick = {handleMore}
                         >more..
                         </p> 
                     : 
@@ -53,11 +59,19 @@ const DetailsMovie = (props) => {
             >
                 Play Trailer
             </button>
-            {loading &&
-                <div className='w-[90%] h-[220px] bg-gray-500'>
-
-                </div>
-                }
+            { loading &&
+                (<div className='w-[90%] bg-gray-500'>
+                    <iframe 
+                            className='w-full aspect-video'
+                            src={"https://www.youtube.com/embed/"+trailer_key+"?autoplay=1&mute=1&controls=1"} 
+                            title="YouTube video player" 
+                            frameborder="0" 
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+                            referrerpolicy="strict-origin-when-cross-origin" 
+                            allowfullscreen>
+                    </iframe>
+                </div>)
+            }
 
             <h1 className='font-semibold text-xl underline underline-offset-2 text-white opacity-70'>Production Companies</h1>
             <div className='flex flex-col items-center'>

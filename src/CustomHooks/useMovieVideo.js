@@ -1,10 +1,20 @@
-import { DETAILS_MOVIE,VIDEO_URL,API_OPTION } from '../Constants/apiKey';
+import { DETAILS_MOVIE, VIDEO_URL, API_OPTION } from "../Constants/apiKey";
+import { useEffect } from "react";
+import { useDispatch } from "react-redux";
+import { addVideoKey } from "../ReduxStore/moviesSlice";
 
-const useMovieVideo =()=>{
-    const fetchMovieVideo = async (movieId) => {
-        const response = await fetch(`${DETAILS_MOVIE}${movieId}${VIDEO_URL}`, API_OPTION)
+export const useMovieVideo = (movieId) => {
+    const dispatch = useDispatch();
+    const id = movieId;
+    console.log("Movie", movieId);
+    const fetchVideo = async (id) => {
+        const response = await fetch(DETAILS_MOVIE + id + VIDEO_URL, API_OPTION);
         const data = await response.json();
-        return data.results[0];
+        const { results } = data;
+        const videoData = results.filter((item) => item.name === "Official Trailer");
+        dispatch(addVideoKey(videoData[0]?.key));
+        // console.log("data", videoData);
+
     }
-    return fetchMovieVideo;
+    useEffect(() => { fetchVideo(id) }, [])
 }
