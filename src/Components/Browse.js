@@ -14,7 +14,7 @@ const Browse = () => {
   usePeople();
   
   return (
-    <div className="w-screen bg-gradient-to-br from-slate-900 to-gray-700 pt-20 pl-4 pb-20">
+    <div className="w-screen bg-gradient-to-br from-slate-900 to-gray-700 pt-20 px-4 pb-20">
         {/* Sessions Movies */}
         <MoviesHome />
         {/* Session TV Shows */}

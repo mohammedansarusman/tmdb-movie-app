@@ -14,7 +14,7 @@ const MoviesHome = () => {
     <div>
         <div className='text-white font-extrabold text-xl opacity-75 w-full mt-2'>Trending Movies</div>
         <div>
-            <div className='flex gap-3 overflow-scroll  w-screen h-[280px] items-center
+            <div className='flex gap-3 overflow-scroll  items-center
                              sm:h-[275px]
                              md:h-[300px]
                              lg:h-[310px]
