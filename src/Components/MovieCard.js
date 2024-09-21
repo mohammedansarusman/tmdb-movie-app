@@ -4,8 +4,6 @@ import { POSTER_URL,NO_IMAGE } from '../Constants/apiKey';
 
 const MovieCard = (props) => {
   const { title, poster_path,original_name,profile_path } = props.film;
-  console.log("result", props.film)
-
   return (
     <div className='rounded-t-xl
     '>

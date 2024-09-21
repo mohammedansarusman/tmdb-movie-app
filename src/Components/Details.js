@@ -9,7 +9,6 @@ import DetailsTv from './DetailsTv';
 
 const Details = () => {
   const { session, id } = useParams();
-  console.log("id ?",id)
   return (
     <div >
       {session === "movie" ? <DetailsMovie movieId={id} /> :
