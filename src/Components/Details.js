@@ -6,6 +6,7 @@ import React from 'react'
 import { useParams } from 'react-router-dom'
 import DetailsMovie from './DetailsMovie';
 import DetailsTv from './DetailsTv';
+import DetailsPerson from './DetailsPerson';
 
 const Details = () => {
   const { session, id } = useParams();
@@ -13,7 +14,7 @@ const Details = () => {
     <div >
       {session === "movie" ? <DetailsMovie movieId={id} /> :
         session === "tv" ? <DetailsTv tvId = {id}/> :
-          session === "person" && <h1>Person</h1>
+          session === "person" && <DetailsPerson pId = {id}/>
       }
     </div>
   )

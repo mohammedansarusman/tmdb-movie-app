@@ -8,6 +8,7 @@ import { Link } from 'react-router-dom';
 const PeopleHome = () => {
     const peopleData = useSelector((store) => store.movie.peopleResults)
     const { results } = peopleData;
+    console.log("people-",results)
 
     // the componenet will render after getting data from API
     if (peopleData === "") return null
