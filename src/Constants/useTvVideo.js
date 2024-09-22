@@ -1,5 +1,5 @@
 import { useDispatch } from "react-redux";
-import { API_OPTION, VIDEO_URL, DETAILS_TV } from "../Constants/apiKey";
+import { API_OPTION, VIDEO_URL, DETAILS_TV } from "./apiKey";
 import { addVideoKey } from "../ReduxStore/moviesSlice";
 import { useEffect } from "react";
 
