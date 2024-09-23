@@ -1,23 +1,60 @@
 import React from 'react'
-import { useSelector } from 'react-redux'
+import { useDispatch, useSelector } from 'react-redux'
 import useMovies from '../CustomHooks/useMovies'
 import Shimmer from './Shimmer'
 import MoviesList from './MoviesList'
+import { addMoviePage } from '../ReduxStore/moviesSlice'
+import { Link } from 'react-router-dom'
 
 const Movies = () => {
-  useMovies();
   const moviesData = useSelector((store) => store.movie.moviesResult)
-  const {results} = moviesData;
-  // console.log("Movies",results)
+  const moviePage = useSelector((store) => store.movie.moviePage)
+  useMovies();
+  const dispatch = useDispatch();
+  const { results, page, total_pages } = moviesData;
+  console.log("Movies", results)
+  console.log("moviesData", moviesData);
+  console.log("pageResult", moviePage);
+  console.log("page", page)
+  console.log("total_page", total_pages)
+
+
+  const previousPage = () => {
+    moviePage > 1 && dispatch(addMoviePage(moviePage - 1))
+  }
+  const nextPage = () => {
+    moviePage < total_pages && dispatch(addMoviePage(moviePage + 1))
+    console.log("executed")
+  }
 
   // the componenet will render after getting data from API
-  if(moviesData==="") return <Shimmer />
-  
+  if (moviesData === "") return <Shimmer />
+
   return (
     <div className='w-screen min-h-screen py-20 bg-gradient-to-br from-slate-800 to-red-950 flex flex-col items-center'>
-      <div className=' flex flex-wrap px-2 gap-2 justify-center'>
-        {results.map((item)=><MoviesList data = {item} key={item.id}/>)}
+      <div className=' flex flex-wrap px-2 gap-5 justify-center'>
+        {results.map((item) =>
+          <Link to={`/details/${item.media_type}/${item.id}`} key={item.id}>
+            <MoviesList data={item} key={item.id} />
+          </Link>
+        )}
       </div>
+
+
+      {/* previous page and next page */}
+      <footer className='flex justify-between items-center w-[80%] mt-4 text-white font-semibold text-xs'>
+        <div className={`p-2 rounded-full  ${moviePage === 1 ? 'bg-gray-500 opacity-50' : ('bg-gray-500 cursor-pointer hover:scale-105')}`}
+          onClick={previousPage}
+        >
+          <p>Previous Page</p>
+        </div>
+        <div className={`p-2 rounded-full ${moviePage === total_pages ? 'bg-gray-500 opacity-50' : ('bg-gray-500 cursor-pointer hover:scale-105')}`}
+          onClick={nextPage}
+        >
+          <p>Next Page</p>
+        </div>
+      </footer>
+
     </div>
   )
 }

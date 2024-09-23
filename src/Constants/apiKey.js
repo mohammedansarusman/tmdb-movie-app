@@ -7,6 +7,7 @@ export const API_OPTION = {
 };
 
 export const MOVIES_URL = 'https://api.themoviedb.org/3/trending/movie/day?language=en-US'
+export const PAGE = "&page=";
 export const POSTER_URL = "https://image.tmdb.org/t/p/w220_and_h330_face"
 export const TV_URL = 'https://api.themoviedb.org/3/trending/tv/day?language=en-US'
 export const PEOPLE_URL = "https://api.themoviedb.org/3/trending/person/day?language=en-US"
