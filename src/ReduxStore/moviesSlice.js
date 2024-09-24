@@ -10,6 +10,7 @@ const moviesSlice = createSlice({
         videoKey:"",
         tvDetails:"",
         moviePage:1,
+        providers:"",
     },
     reducers: {
         addMovies: (state, action)=>{
@@ -32,11 +33,15 @@ const moviesSlice = createSlice({
         },
         addMoviePage:(state,action) =>{
             state.moviePage = action.payload;
+        },
+        addProviders:(state,action)=>{
+            state.providers = action.payload;
         }
+
         // add other actions if needed...  like search, filter etc.
         // add other reducers if needed...  like movieDetails, search etc.
     },
 });
 
-export const { addMovies,addTv,addPeople,addMovieDetails,addVideoKey,addTvDetails,addMoviePage } = moviesSlice.actions;
+export const { addMovies,addTv,addPeople,addMovieDetails,addVideoKey,addTvDetails,addMoviePage,addProviders } = moviesSlice.actions;
 export default moviesSlice.reducer;

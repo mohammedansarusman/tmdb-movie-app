@@ -5,6 +5,7 @@ import Shimmer from './Shimmer'
 import MoviesList from './MoviesList'
 import { addMoviePage } from '../ReduxStore/moviesSlice'
 import { Link } from 'react-router-dom'
+import ProvidersMovie from './ProvidersMovie'
 
 const Movies = () => {
   const moviesData = useSelector((store) => store.movie.moviesResult)
@@ -12,19 +13,12 @@ const Movies = () => {
   useMovies();
   const dispatch = useDispatch();
   const { results, page, total_pages } = moviesData;
-  console.log("Movies", results)
-  console.log("moviesData", moviesData);
-  console.log("pageResult", moviePage);
-  console.log("page", page)
-  console.log("total_page", total_pages)
-
 
   const previousPage = () => {
     moviePage > 1 && dispatch(addMoviePage(moviePage - 1))
   }
   const nextPage = () => {
     moviePage < total_pages && dispatch(addMoviePage(moviePage + 1))
-    console.log("executed")
   }
 
   // the componenet will render after getting data from API
@@ -32,6 +26,8 @@ const Movies = () => {
 
   return (
     <div className='w-screen min-h-screen py-20 bg-gradient-to-br from-slate-800 to-red-950 flex flex-col items-center'>
+      {/* Movie Providers logo */}
+      {<ProvidersMovie />}
       <div className=' flex flex-wrap px-2 gap-5 justify-center'>
         {results.map((item) =>
           <Link to={`/details/${item.media_type}/${item.id}`} key={item.id}>
