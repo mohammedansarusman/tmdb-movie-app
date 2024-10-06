@@ -1,5 +1,5 @@
 import { API_OPTION, TV_URL } from "../Constants/apiKey"
-import React, { useEffect } from "react"
+import { useEffect } from "react"
 import { useDispatch } from "react-redux"
 import { addTv } from "../ReduxStore/moviesSlice";
 
@@ -14,6 +14,6 @@ const useTV = () => {
     }
     useEffect(() => {
         fetchTV()
-    }, [])
+    })
 }
 export default useTV;

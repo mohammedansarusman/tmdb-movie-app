@@ -12,7 +12,7 @@ const Movies = () => {
   const moviePage = useSelector((store) => store.movie.moviePage)
   useMovies();
   const dispatch = useDispatch();
-  const { results, page, total_pages } = moviesData;
+  const { results, total_pages } = moviesData;
 
   const previousPage = () => {
     moviePage > 1 && dispatch(addMoviePage(moviePage - 1))
