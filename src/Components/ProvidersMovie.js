@@ -35,14 +35,14 @@ const ProvidersMovie = () => {
                 window.innerWidth >= 900 && window.innerWidth <1000 ? setCount(18) :
                 setCount(20);
             })
-                window.innerWidth >= 500 && window.innerWidth<600  ? setCount(10) :
-                window.innerWidth >= 600 && window.innerWidth <700 ? setCount(12) : 
-                window.innerWidth >= 700 && window.innerWidth <800 ? setCount(14) : 
-                window.innerWidth >= 800 && window.innerWidth <900 ? setCount(16) : 
-                window.innerWidth >= 900 && window.innerWidth <1000 ? setCount(18) :
-                setCount(20);
+            window.innerWidth >= 500 && window.innerWidth<600  ? setCount(10) :
+            window.innerWidth >= 600 && window.innerWidth <700 ? setCount(12) : 
+            window.innerWidth >= 700 && window.innerWidth <800 ? setCount(14) : 
+            window.innerWidth >= 800 && window.innerWidth <900 ? setCount(16) : 
+            window.innerWidth >= 900 && window.innerWidth <1000 ? setCount(18) :
+            setCount(20);
+            
             window.addEventListener("resize", handleResize);
-
             return () => {
                 window.removeEventListener("resize", handleResize);
             }    
