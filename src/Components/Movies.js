@@ -1,4 +1,4 @@
-import React, {useState} from 'react'
+import React, { useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import useMovies from '../CustomHooks/useMovies'
 import Shimmer from './Shimmer'
@@ -10,12 +10,13 @@ import { changeScreen } from '../ReduxStore/filterSlice'
 import { Link } from 'react-router-dom'
 import ProvidersMovie from './ProvidersMovie'
 import Filters from './Filters'
+import ReleaseYear from './ReleaseYear'
 
 const Movies = () => {
   const dispatch = useDispatch();
   const moviesData = useSelector((store) => store.movie.moviesResult)
   const moviePage = useSelector((store) => store.movie.moviePage)
-  const pos = useSelector((store)=>store.filterItem.position)
+  const pos = useSelector((store) => store.filterItem.position)
   useMovies();
   const { results, total_pages } = moviesData;
 
@@ -30,20 +31,24 @@ const Movies = () => {
 
   return (
     <div className='w-screen min-h-screen py-20 bg-gradient-to-br from-slate-800 to-red-950 flex flex-col items-center relative'>
-      {console.log("position",pos)}
-      <div className={`w-screen h-screen bg-gray-800 absolute top-[60px] z-10  transition-all duration-1000 ease-out`}
-           style={{left:`-${pos}%`}}
+      {console.log("position", pos)}
+      <div className={`flex flex-col justify-start w-screen h-screen bg-gray-800  z-10 top-0 fixed transition-all duration-1000 ease-out`}
+        style={{ left: `-${pos}%` }}
       >
+        <div className='bg-blue-600 w-screen h-[50px] flex justify-between items-center px-2'>
           <h1 className='text-white opacity-55 text-2xl'>Filters</h1>
-          <div className='w-[90%] h-[25px] text-right text-green-400 cursor-pointer' 
-            onClick={()=>{
+          <div className='w-[90%] h-[25px] text-right text-green-400 cursor-pointer'
+            onClick={() => {
               dispatch(changeScreen(100))
               console.log("hello")
-
             }}>
             Done
           </div>
+        </div>
+      <ReleaseYear />
+
       </div>
+
       {/* Movie Providers logo */}
       {<ProvidersMovie />}
       {/* Filters */}
