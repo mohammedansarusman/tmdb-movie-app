@@ -1,7 +1,8 @@
 import React, { useState } from 'react'
 import MultiRangeSlider from "multi-range-slider-react";
+import { FaBorderNone } from 'react-icons/fa';
 
-
+// <ReleaseYear /> calling from <Movies />
 
 
 const ReleaseYear = () => {
@@ -11,10 +12,10 @@ const ReleaseYear = () => {
   const [maxValue2, setMaxValue2] = useState(0);
   const handleInput = (e) => {
     // Ensure minValue can only go up to maxValue - 1, and maxValue can only go down to minValue + 1
-    if (e.minValue <= maxValue - 1 && e.maxValue >= minValue + 1) {
+    // if (e.minValue <= maxValue - 1 && e.maxValue >= minValue + 1) {
       setMinValue(e.minValue);
       setMaxValue(e.maxValue);
-    }
+    // }
   };
   return (
     <div className='flex flex-col items-center w-screen  mt-4 text-white px-3'>
@@ -48,14 +49,11 @@ const ReleaseYear = () => {
               border:'none',
               borderRadius:'0',
               boxShadow:'none',
-              background:"green"
+              background:'none',
             }
           }
         ></MultiRangeSlider>
       </div>
-      <h1>min:{minValue}</h1>
-      <h1>min2:{minValue2}</h1>
-
     </div>
   )
 }

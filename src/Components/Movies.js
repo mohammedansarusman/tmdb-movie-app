@@ -11,6 +11,7 @@ import { Link } from 'react-router-dom'
 import ProvidersMovie from './ProvidersMovie'
 import Filters from './Filters'
 import ReleaseYear from './ReleaseYear'
+import VoteAverage from './VoteAverage'
 
 const Movies = () => {
   const dispatch = useDispatch();
@@ -40,12 +41,12 @@ const Movies = () => {
           <div className='w-[90%] h-[25px] text-right text-green-400 cursor-pointer'
             onClick={() => {
               dispatch(changeScreen(100))
-              console.log("hello")
             }}>
             Done
           </div>
         </div>
       <ReleaseYear />
+      <VoteAverage />
 
       </div>
 

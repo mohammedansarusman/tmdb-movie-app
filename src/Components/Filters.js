@@ -17,7 +17,6 @@ const Filters = () => {
             className='flex items-center justify-center  w-[20%] cursor-pointer bg-blue-800'
             onClick = {()=>{
                 dispatch(changeScreen(0))
-                console.log("hello")
             }}
         >
             <FaFilter className='w-3 h-4' />  {/* Filter Icon */}
