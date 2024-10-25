@@ -1,21 +1,21 @@
-import React, { useState } from 'react'
+import React from 'react'
 import MultiRangeSlider from "multi-range-slider-react";
 import { FaBorderNone } from 'react-icons/fa';
-
+import { useSelector,useDispatch } from 'react-redux';
+import { changeStartYear, changeEndYear, changeStartYear2, changeEndYear2 } from '../ReduxStore/filterSlice';
 // <ReleaseYear /> calling from <Movies />
 
 
 const ReleaseYear = () => {
-  const [minValue, setMinValue] = useState(1990);
-  const [maxValue, setMaxValue] = useState(2024);
-  const [minValue2, setMinValue2] = useState(0);
-  const [maxValue2, setMaxValue2] = useState(0);
+  
+  const startYearValue = useSelector((store)=>store.filterItem.startYear);
+  const endYearValue = useSelector((store)=>store.filterItem.endYear);
+  const dispatch = useDispatch();
+
+
   const handleInput = (e) => {
-    // Ensure minValue can only go up to maxValue - 1, and maxValue can only go down to minValue + 1
-    // if (e.minValue <= maxValue - 1 && e.maxValue >= minValue + 1) {
-      setMinValue(e.minValue);
-      setMaxValue(e.maxValue);
-    // }
+      dispatch(changeStartYear(e.minValue))
+      dispatch(changeEndYear(e.maxValue))
   };
   return (
     <div className='flex flex-col items-center w-screen  mt-4 text-white px-3'>
@@ -31,8 +31,8 @@ const ReleaseYear = () => {
           label={false}
           ruler={false}
           step={1}
-          minValue={minValue}
-          maxValue={maxValue}
+          minValue={startYearValue}
+          maxValue={endYearValue}
           barLeftColor='#606060'
           barRightColor='#606060'
           barInnerColor='#A0A0A0'
@@ -40,8 +40,8 @@ const ReleaseYear = () => {
 
           onChange={(e) => {
             if (e.maxValue - e.minValue >= 1) {
-              setMinValue2(e.minValue);
-              setMaxValue2(e.maxValue);
+              dispatch(changeStartYear2(e.minValue));
+              dispatch(changeEndYear2(e.maxValue));
             }
           }}
           style={

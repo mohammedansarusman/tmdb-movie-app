@@ -16,6 +16,13 @@ export const DETAILS_MOVIE = "https://api.themoviedb.org/3/movie/"
 export const VIDEO_URL = "/videos?language=en-US"
 export const DETAILS_TV = "https://api.themoviedb.org/3/tv/"
 export const PROVIDERS = "https://api.themoviedb.org/3/watch/providers/movie?language=en-US"
+export const FILTER_MOVIES1="https://api.themoviedb.org/3/discover/movie?include_adult=false&include_video=false&language=en-US&page=1&"
+export const FILTER_CRITERIA_1 = "&release_date.gte="
+export const FILTER_CRITERIA_2 = "&release_date.lte="
+export const FILTER_CRITERIA_3 = "&sort_by=popularity.desc"
+export const FILTER_CRITERIA_4 ="&vote_average.gte="
+export const FILTER_CRITERIA_5 = "&vote_average.lte="
+
 
 
 

@@ -41,12 +41,13 @@ const Movies = () => {
           <div className='w-[90%] h-[25px] text-right text-green-400 cursor-pointer'
             onClick={() => {
               dispatch(changeScreen(100))
+              // call custom hook for fetching data
             }}>
             Done
           </div>
         </div>
-      <ReleaseYear />
-      <VoteAverage />
+        <ReleaseYear />
+        <VoteAverage />
 
       </div>
 
