@@ -1,6 +1,7 @@
-import React, { useState } from 'react'
+import React from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import useMovies from '../CustomHooks/useMovies'
+import useFilterMovies from '../CustomHooks/useFilterMovies'
 import Shimmer from './Shimmer'
 import MoviesList from './MoviesList'
 
@@ -19,6 +20,8 @@ const Movies = () => {
   const moviePage = useSelector((store) => store.movie.moviePage)
   const pos = useSelector((store) => store.filterItem.position)
   useMovies();
+  useFilterMovies();
+  
   const { results, total_pages } = moviesData;
 
   const previousPage = () => {
@@ -58,7 +61,7 @@ const Movies = () => {
       {/* Movie List */}
       <div className=' flex flex-wrap px-2 gap-5 justify-center'>
         {results.map((item) =>
-          <Link to={`/details/${item.media_type}/${item.id}`} key={item.id}>
+          <Link to={`/details/${item.id}`} key={item.id}>
             <MoviesList data={item} key={item.id} />
           </Link>
         )}

@@ -7,15 +7,18 @@ import { useMovieVideo } from '../CustomHooks/useMovieVideo';
 import DetailsHeader from './DetailsHeader';
 import DetailsOverview from './DetailsOverview';
 import Trailer from './Trailer';
+import { useParams } from 'react-router-dom';
 
-const DetailsMovie = (props) => {
+const DetailsMovie1 = () => {
+    const { id } = useParams();
+    console.log("hello detals movie 1")
     const [loading, setLoading] = useState(false); // state variable using to play the trailer
     const movie_details = useSelector((store) => store.movie.movieDetails);
     const trailer_key = useSelector((store) => store.movie.videoKey); // key value of the trailer
-    const { movieId } = props;
+    // const { movieId } = props;
     const { poster_path, title, genres, production_companies, overview, original_name } = movie_details
-    useDetailsMovie(movieId); // api callinf for detailed movie info
-    useMovieVideo(movieId); // api calling for trailer
+    useDetailsMovie(id); // api callinf for detailed movie info
+    useMovieVideo(id); // api calling for trailer
 
     if (movie_details === "") return <Shimmer />;
 
@@ -44,4 +47,4 @@ const DetailsMovie = (props) => {
         </div>
     )
 }
-export default DetailsMovie
+export default DetailsMovie1

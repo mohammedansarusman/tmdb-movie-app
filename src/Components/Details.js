@@ -12,7 +12,7 @@ const Details = () => {
   const { session, id } = useParams();
   return (
     <div >
-      {session === "movie" ? <DetailsMovie movieId={id} /> :
+      {session === "movie"  ? <DetailsMovie movieId={id} /> :
         session === "tv" ? <DetailsTv tvId = {id}/> :
           session === "person" && <DetailsPerson pId = {id}/>
       }

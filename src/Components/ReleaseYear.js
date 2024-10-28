@@ -39,10 +39,8 @@ const ReleaseYear = () => {
           onInput={handleInput}
 
           onChange={(e) => {
-            if (e.maxValue - e.minValue >= 1) {
               dispatch(changeStartYear2(e.minValue));
               dispatch(changeEndYear2(e.maxValue));
-            }
           }}
           style={
             {
