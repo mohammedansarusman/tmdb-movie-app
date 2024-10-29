@@ -35,7 +35,6 @@ const Movies = () => {
 
   return (
     <div className='w-screen min-h-screen py-20 bg-gradient-to-br from-slate-800 to-red-950 flex flex-col items-center relative'>
-      {console.log("position", pos)}
       <div className={`flex flex-col justify-start w-screen h-screen bg-gray-800  z-10 top-0 fixed transition-all duration-1000 ease-out`}
         style={{ left: `-${pos}%` }}
       >

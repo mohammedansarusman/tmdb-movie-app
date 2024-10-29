@@ -1,16 +1,20 @@
 import React from 'react'
 import { FaFilter } from "react-icons/fa";
-import { IoIosArrowDown } from "react-icons/io";
-import { IoIosArrowUp } from "react-icons/io";
-import { useSelector, useDispatch } from'react-redux';
-import { changeScreen } from '../ReduxStore/filterSlice';
-
-// <IoIosArrowUp />
-// <IoIosArrowDown />
-
+import { useDispatch } from'react-redux';
+import { changeScreen, changeStartYear, changeEndYear, changeStartYear2, changeEndYear2, changeStartRating, changeEndRating, changeStartRating2, changeEndRating2 } from '../ReduxStore/filterSlice';
 
 const Filters = () => {
   const dispatch = useDispatch();  
+  const handleReset = ()=>{
+    dispatch(changeStartYear(1990));
+    dispatch(changeEndYear(2024));
+    dispatch(changeStartYear2(1990));
+    dispatch(changeEndYear2(2024));
+    dispatch(changeStartRating(0));
+    dispatch(changeEndRating(10));
+    dispatch(changeStartRating2(0));
+    dispatch(changeEndRating2(10));
+  }
   return (
     <div className='text-gray-500 w-screen h-[30px]  flex justify-around'>
         <div 
@@ -23,10 +27,10 @@ const Filters = () => {
             <h1>Filters</h1>
         </div>
         <div className='flex items-center w-[80%] justify-end'>
-            {/* <div> */}
-                <button className='w-[100px] h-[25px]  text-gray-500 hover:bg-black font-semibold'>x RESET</button>
-            {/* </div> */}
-            
+            <button 
+                className='w-[100px] h-[25px]  text-gray-500 hover:bg-black font-semibold'
+                onClick={handleReset}
+            >x RESET</button>
         </div>
     </div>
   )
@@ -34,15 +38,3 @@ const Filters = () => {
 
 export default Filters
 
-{/* <div className='flex items-center'>
-                <h1>Release Year</h1>
-                <IoIosArrowDown />
-            </div>
-            <div className='flex items-center'>
-                <h1>Rating</h1>
-                <IoIosArrowDown />
-            </div>
-            <div className='flex items-center'>
-                <h1>Genre</h1>
-                <IoIosArrowDown />
-            </div> */}

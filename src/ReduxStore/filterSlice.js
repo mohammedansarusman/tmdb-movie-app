@@ -4,12 +4,14 @@ const filterSlice = createSlice({
     name: "filterItem",
     initialState: {
         position: 100,
-        startYear:2000,
-        endYear:2010,
-        startYear2:0,
-        endYear2:0,
+        startYear:1990,
+        endYear:2024,
+        startYear2:1900,
+        endYear2:2024,
         startRating:0,
         endRating:10,
+        startRating2:0,
+        endRating2:10,
     },
     reducers: {
         changeScreen: (state, action) => {
@@ -33,8 +35,24 @@ const filterSlice = createSlice({
         changeEndRating: (state, action) => {
             state.endRating = action.payload;
         },
+        changeStartRating2: (state, action) => {
+            state.startRating2 = action.payload;
+        },
+        changeEndRating2: (state, action) => {
+            state.endRating2 = action.payload;
+        },
     },
 })
 
-export const { changeScreen, changeStartYear, changeEndYear, changeStartYear2, changeEndYear2, changeStartRating, changeEndRating } = filterSlice.actions;
+export const { 
+    changeScreen, 
+    changeStartYear, 
+    changeEndYear, 
+    changeStartYear2, 
+    changeEndYear2, 
+    changeStartRating, 
+    changeEndRating,
+    changeStartRating2, 
+    changeEndRating2 
+} = filterSlice.actions;
 export default filterSlice.reducer;
