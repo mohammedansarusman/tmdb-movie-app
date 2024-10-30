@@ -58,7 +58,7 @@ const Movies = () => {
       {/* Filters */}
       <Filters />
       {/* Movie List */}
-      <div className=' flex flex-wrap px-2 gap-5 justify-center'>
+      <div className=' flex flex-wrap px-2 gap-5 justify-center mt-[70px]'>
         {results.map((item) =>
           <Link to={`/details/${item.id}`} key={item.id}>
             <MoviesList data={item} key={item.id} />

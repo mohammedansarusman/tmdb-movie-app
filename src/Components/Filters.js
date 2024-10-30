@@ -2,7 +2,7 @@ import React from 'react'
 import { FaFilter } from "react-icons/fa";
 import { useDispatch } from'react-redux';
 import { changeScreen, changeStartYear, changeEndYear, changeStartYear2, changeEndYear2, changeStartRating, changeEndRating, changeStartRating2, changeEndRating2 } from '../ReduxStore/filterSlice';
-
+import { addMoviePage } from '../ReduxStore/moviesSlice';
 const Filters = () => {
   const dispatch = useDispatch();  
   const handleReset = ()=>{
@@ -14,11 +14,13 @@ const Filters = () => {
     dispatch(changeEndRating(10));
     dispatch(changeStartRating2(0));
     dispatch(changeEndRating2(10));
+    dispatch(addMoviePage(1));
   }
+
   return (
-    <div className='text-gray-500 w-screen h-[30px]  flex justify-around'>
+    <div className='text-gray-500 w-screen h-[30px]  flex justify-around px-5 bg-gray-500'>
         <div 
-            className='flex items-center justify-center  w-[20%] cursor-pointer bg-blue-800'
+            className='flex items-center justify-center  w-[50%] cursor-pointer  text-white hover:text-orange-500'
             onClick = {()=>{
                 dispatch(changeScreen(0))
             }}
@@ -26,11 +28,11 @@ const Filters = () => {
             <FaFilter className='w-3 h-4' />  {/* Filter Icon */}
             <h1>Filters</h1>
         </div>
-        <div className='flex items-center w-[80%] justify-end'>
+        <div className='flex items-center w-[50%] justify-center'>
             <button 
-                className='w-[100px] h-[25px]  text-gray-500 hover:bg-black font-semibold'
+                className='w-[100px]  text-white'
                 onClick={handleReset}
-            >x RESET</button>
+            >X Reset</button>
         </div>
     </div>
   )
