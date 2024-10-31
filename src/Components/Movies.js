@@ -35,10 +35,13 @@ const Movies = () => {
 
   return (
     <div className='w-screen min-h-screen py-20 bg-gradient-to-br from-slate-800 to-red-950 flex flex-col items-center relative'>
-      <div className={`flex flex-col justify-start w-screen h-screen bg-gray-800  z-10 top-0 fixed transition-all duration-1000 ease-out`}
+      <div className={
+        `flex flex-col justify-start w-screen h-screen bg-gray-800  z-10 top-0 fixed transition-all duration-1000 ease-out
+         lg:w-[50%] xl:w-[40%]`
+      }
         style={{ left: `-${pos}%` }}
       >
-        <div className='bg-blue-600 w-screen h-[50px] flex justify-between items-center px-2'>
+        <div className='bg-blue-600 w-screen h-[50px] flex justify-between items-center px-2 lg:w-[100%]'>
           <h1 className='text-white opacity-55 text-2xl'>Filters</h1>
           <div className='w-[90%] h-[25px] text-right text-green-400 cursor-pointer'
             onClick={() => {

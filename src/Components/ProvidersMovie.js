@@ -50,38 +50,35 @@ const ProvidersMovie = () => {
     []);
 
     if (providers_data === "") return null
-    // const x = results.slice(0, 50);
 
     return (
-        <div>
-            <div className='w-screen h-[100px] flex  mb-5 justify-center items-center
-                            sm:py-1 xl:mb-20
-            '>
-                <div className='w-[90%] h-[50%]'>
-                    <Swiper
-                        modules={[Navigation, Pagination, A11y, Scrollbar]}
-                        spaceBetween={10}
-                        slidesPerView={count}
-                        slidesPerGroup={count}
-                        speed={1500}
-                        onSlideChange={() => console.log('slide change')}
-                        onSwiper={(swiper) => console.log(swiper)}
-                        navigation
-                    // pagination={{ clickable: true }}
-                    // scrollbar={{ draggable: true }}
-                    >
-                        {results.map((pro) =>
-                            <SwiperSlide key={pro.provider_id}>
-                                <div className="w-[100%] h-[100%]" >
-                                    <img src={POSTER_URL + pro.logo_path}
-                                        alt='pic' key={pro.provider_id}
-                                        className='w-[100%] h-[100%] object-contain rounded-xl'
-                                    />
-                                </div>
-                            </SwiperSlide>
-                        )}
-                    </Swiper>
-                </div>
+        <div className='w-screen h-[100px] flex  mb-5 justify-center items-center 
+                        sm:py-1 xl:mb-20
+        '>
+            <div className='w-[90%] h-[50%]'>
+                <Swiper
+                    modules={[Navigation, Pagination, A11y, Scrollbar]}
+                    spaceBetween={10}
+                    slidesPerView={count}
+                    slidesPerGroup={count}
+                    speed={1500}
+                    onSlideChange={() => console.log('slide change')}
+                    onSwiper={(swiper) => console.log(swiper)}
+                    navigation
+                // pagination={{ clickable: true }}
+                // scrollbar={{ draggable: true }}
+                >
+                    {results.map((pro) =>
+                        <SwiperSlide key={pro.provider_id}>
+                            <div className="" >
+                                <img src={POSTER_URL + pro.logo_path}
+                                    alt='pic' key={pro.provider_id}
+                                    className='w-[50px] rounded-xl'
+                                />
+                            </div>
+                        </SwiperSlide>
+                    )}
+                </Swiper>
             </div>
         </div>
     )
