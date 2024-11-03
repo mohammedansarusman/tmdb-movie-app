@@ -7,6 +7,7 @@ import Browse from './Components/Browse';
 import Tv from './Components/Tv';
 import People from './Components/People';
 import Details from './Components/Details';
+import Search from './Components/Search';
 import DetailsMovie1 from './Components/DetailsMovie1';
 
 import reportWebVitals from './reportWebVitals';
@@ -44,6 +45,10 @@ const appRouter = createBrowserRouter(
           path:"/details/:id",
           element: <DetailsMovie1 />,
         },
+        {
+          path:"/search",
+          element: <Search />,
+        }
       ]
     },
     
@@ -53,12 +58,9 @@ const root = ReactDOM.createRoot(document.getElementById('root'));
 
 root.render(
   <Provider store={appStore}>
-        {/* <App /> */}
         <RouterProvider router={appRouter} />
   </Provider>
 );
 
-// If you want to start measuring performance in your app, pass a function
-// to log results (for example: reportWebVitals(console.log))
-// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
+
 reportWebVitals();

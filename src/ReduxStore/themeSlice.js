@@ -5,7 +5,7 @@ const themeSlice = createSlice({
     initialState: {
         searchColor: "bg-gray-950",
         longSearchBar: false,
-        inputSearchBar:"",
+        inputValue:"",
     },
     reducers:{
         // action using to change the search bar color

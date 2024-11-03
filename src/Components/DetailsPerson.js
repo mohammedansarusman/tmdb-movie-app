@@ -1,32 +1,30 @@
 import React from 'react'
 import { useSelector } from 'react-redux'
-import usePeople from '../CustomHooks/usePeople';
+import useSearchPeople from '../CustomHooks/useSearchPeople';
 import MovieCard from './MovieCard';
 import { Link } from 'react-router-dom';
 import { POSTER_URL, NO_IMAGE } from '../Constants/apiKey';
 
-// DetailsPerson component calling from 
+// DetailsPerson component calling from Details
 const DetailsPerson = (props) => {
     const { pId } = props;
-    console.log("person", pId)
-    usePeople() // fetch people data on component mount
+    console.log("person id", pId)
+    useSearchPeople(pId) // fetch people data on component mount
 
     const data = useSelector((store) => store.movie.peopleResults)
-    const { results } = data;
-
+    // const { results } = data;
+    console.log("data",data)
 
     if (data === "") return null
-    const person = results.find((persons) => persons.id === parseInt(pId));
-    console.log("person", person)
+    // const person = results.find((persons) => persons.id === parseInt(pId));
+    // console.log("person details", person);
 
-    const { profile_path, name, known_for, known_for_department } = person;
+    const { profile_path,  name, known_for, known_for_department } = data;
     return (
         <div className='w-screen min-h-screen py-20 bg-gradient-to-br from-slate-800 to-red-950 flex flex-col items-center gap-5
         sm:flex sm:flex-col  sm:items-center sm:py-20'>
-            {console.log(profile_path)}
-            {console.log(POSTER_URL)}
             <div className='flex flex-col items-center py-6 w-screen sm:flex-row sm:items-center sm:justify-center sm:gap-5 '>
-                {profile_path ? <img src={POSTER_URL + profile_path} alt="img"
+                {profile_path  ?  <img src={POSTER_URL + profile_path} alt="img"
                     className='w-[170px] rounded-lg sm:w-[200px] lg:w-[210px]'
                 />
                     :
@@ -46,6 +44,7 @@ const DetailsPerson = (props) => {
                              lg:h-[310px]
                              xl:h-[320px]'
                 >
+                 {/* This portion is closed due to one variablr name known is not available in api */}
                     {/* {
                         known_for.map(
                             (item) => (
@@ -54,10 +53,9 @@ const DetailsPerson = (props) => {
                                 </Link>
                             ))
                     } */}
-                    {console.log("known",known_for)}
+                    {/* {console.log("known",known_for)} */}
                 </div>
             </div>
-            {console.log("hell", person?.name)}
         </div>
     )
 }

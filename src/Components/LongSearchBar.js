@@ -1,23 +1,28 @@
 import React from 'react'
 import { FaSearch } from "react-icons/fa";
-import { useRef,useEffect } from 'react';
-import { useSelector, useDispatch } from'react-redux';
-import { changeInputValue,changeSearchBar } from '../ReduxStore/themeSlice';
+import { useRef, useEffect } from 'react';
+import { useSelector, useDispatch } from 'react-redux';
+import { changeInputValue, changeSearchBar } from '../ReduxStore/themeSlice';
+import { Link } from "react-router-dom"
+import Search from "./Search"
 
 const LongSearchBar = () => {
   const dispatch = useDispatch();
   const inputRef = useRef(null);
-  console.log("input ref",inputRef.current);
+  console.log("input ref", inputRef.current);
   const searchInput = useSelector((store) => store.theme.inputValue);
 
-  useEffect(()=>inputRef.current.focus(),[])
+  useEffect(() => inputRef.current.focus(), [])
 
-  const handleFocus = ()=> {
-      dispatch(changeSearchBar(true));
+  const handleFocus = () => {
+    dispatch(changeSearchBar(true));
   }
-  const handleBlur = ()=> {
-      dispatch(changeSearchBar(false));
-      console.log("Im going hell")
+  const handleBlur = () => {
+    dispatch(changeSearchBar(false));
+    console.log("Im going hell")
+  }
+  const handleChange = (event) => {
+    dispatch(changeInputValue(event.target.value))
   }
   return (
     <div className='xl:hidden
@@ -30,7 +35,7 @@ const LongSearchBar = () => {
                     w-[90%] h-full  focus:outline-none text-black rounded-l-full px-5"
         ref={inputRef}
         value={searchInput}
-        onChange={(event)=>dispatch(changeInputValue(event.target.value))}
+        onChange={handleChange}
         onBlur={handleBlur}
         onFocus={handleFocus}
       />

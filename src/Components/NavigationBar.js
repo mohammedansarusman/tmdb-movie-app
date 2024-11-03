@@ -22,8 +22,10 @@ const NavigationBar = () => {
   const handleBlur = () => {
     dispatch(changeColor('bg-black'))
   }
+  
   return (
     <div className=''>
+      {console.log("input value:",searchInput)}
       <div className='w-full h-[1px] bg-orange-300 fixed z-20'></div>
       <div className="w-full h-[60px] bg-black flex-row items-center px-[3%] fixed z-10
                     sm:w-full sm:h-[60px] sm:flex-row sm:items-center sm:px-[3%] sm:fixed sm:z-10
@@ -57,7 +59,9 @@ const NavigationBar = () => {
               value={searchInput}
               onChange={(event) => dispatch(changeInputValue(event.target.value))}
             />
-            <FaSearch className="text-slate-400 cursor-pointer" />
+            <Link to = {"/search"}>
+                <FaSearch className="text-slate-400 cursor-pointer"/>
+            </Link>
           </div>
           {/* Navigation Bar  - Home - Movies - People */}
           <div className="w-full  bg-black text-white flex justify-around items-center bottom-0 right-0 fixed z-10
@@ -114,7 +118,7 @@ const NavigationBar = () => {
             <div className="w-[40px] h-[40px] bg-rose-800 rounded-full text-white flex items-center justify-center font-extrabold">A</div>
           </div>
         </div>
-        {longSearchBarWidth && <LongSearchBar />}
+        {/* {longSearchBarWidth && <LongSearchBar />} */}
       </div>
     </div>
   )

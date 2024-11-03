@@ -1,5 +1,5 @@
 import React from 'react'
-import { POSTER_URL } from '../Constants/apiKey';
+import { POSTER_URL, NO_IMAGE } from '../Constants/apiKey';
 
 
 const DetailsHeader = (props) => {
