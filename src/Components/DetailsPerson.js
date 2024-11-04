@@ -11,7 +11,7 @@ const DetailsPerson = (props) => {
     console.log("person id", pId)
     useSearchPeople(pId) // fetch people data on component mount
 
-    const data = useSelector((store) => store.movie.peopleResults)
+    const data = useSelector((store) => store.movie.searchPeople)
     // const { results } = data;
     console.log("data",data)
 
