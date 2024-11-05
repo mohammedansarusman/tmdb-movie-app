@@ -5,10 +5,13 @@ import useTv from '../CustomHooks/useTv'
 import useMovies from '../CustomHooks/useMovies';
 import usePeople from '../CustomHooks/usePeople';
 import PeopleHome from './PeopleHome';
+import Shimmer from './Shimmer';
+import { useSelector } from 'react-redux';
 
 
 
 const Browse = () => {
+
   useMovies();
   useTv();
   usePeople();

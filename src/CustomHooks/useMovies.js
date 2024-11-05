@@ -9,9 +9,19 @@ const useMovies = () =>{
     console.log("sheetNo",sheetNo)
     const dispatch = useDispatch();
     const fetchMovies = async () => {
-        const response = await fetch(MOVIES_URL+PAGE+sheetNo,API_OPTION)
-        const data = await response.json()
-        dispatch(addMovies(data))
+        // const response = await fetch(MOVIES_URL+PAGE+sheetNo,API_OPTION)
+        // const data = await response.json()
+        // dispatch(addMovies(data))
+        setTimeout(async () => {
+            try {
+                const response = await fetch(`${MOVIES_URL}${PAGE}${sheetNo}`, API_OPTION);
+                const data = await response.json();
+                dispatch(addMovies(data));
+            } catch (error) {
+                console.error("Error fetching movies:", error);
+            }
+        }, 3000); // 3000 ms = 3 seconds
+
     } 
     useEffect(()=>{fetchMovies()},[sheetNo]) 
 }
