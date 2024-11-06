@@ -1,22 +1,26 @@
 import React from 'react'
+import HomeShimmer from './HomeShimmer'
 
 const Shimmer = () => {
   return (
-    // <div className='w-screen h-screen bg-violet-600 text-white flex justify-center items-center'>Shimmer Loding...</div>
-    <div className='w-screen h-screen bg-violet-600 text-white -ml-4 -mt-5'>
+    <div className='w-screen bg-gradient-to-br from-slate-900 to-gray-700 text-white relative py-20 pl-5'>
+      <br></br>
+      {/* Heading Shimmer */}
+      <div className='w-[200px] h-[35px] bg-gray-500 rounded-lg'></div>
+      <div className='flex overflow-scroll mt-3'>
+        <HomeShimmer />
+      </div>
       <br></br>
       <div className='w-[200px] h-[35px] bg-gray-500 rounded-lg'></div>
-      <div className = 'w-[100%] flex justify-center gap-3 mt-1'>
-        <div className = 'w-[150px] h-[225px] bg-gray-500 rounded-xl sm:w-[160px] sm:h-[235px] md:w-[170px] md:h-[260px] lg:w-[190px] lg:h-[270px] xl:w-[200px] xl:h-[280px]'></div>
-        <div className = 'w-[150px] h-[225px] bg-gray-500 rounded-xl sm:w-[160px] sm:h-[235px] md:w-[170px] md:h-[260px] lg:w-[190px] lg:h-[270px] xl:w-[200px] xl:h-[280px]'></div>
-        <div className = 'w-[150px] h-[225px] bg-gray-500 rounded-xl sm:w-[160px] sm:h-[235px] md:w-[170px] md:h-[260px] lg:w-[190px] lg:h-[270px] xl:w-[200px] xl:h-[280px]'></div>
-        <div className = 'w-[150px] h-[225px] bg-gray-500 rounded-xl sm:w-[160px] sm:h-[235px] md:w-[170px] md:h-[260px] lg:w-[190px] lg:h-[270px] xl:w-[200px] xl:h-[280px]'></div>
-        
+      <div className='flex overflow-scroll mt-3'>
+        <HomeShimmer />
       </div>
-
-
+      <br></br>
+      <div className='w-[200px] h-[35px] bg-gray-500 rounded-lg'></div>
+      <div className='flex overflow-scroll mt-3'>
+        <HomeShimmer />
+      </div>
     </div>
-
   )
 }
 

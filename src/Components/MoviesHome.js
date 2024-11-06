@@ -2,14 +2,13 @@ import React from 'react'
 import { useSelector } from 'react-redux';
 import MovieCard from './MovieCard'
 import { Link } from 'react-router-dom';
-import Shimmer from './Shimmer';
 
 const MoviesHome = () => {
     const moviesData = useSelector((store)=>store.movie.moviesResult)
     const {results} = moviesData;
 
     // the componenet will render after getting data from API
-    if(moviesData==="") return <Shimmer />
+    if(moviesData==="") return null
   return (
     <div>
         <div className='text-white font-extrabold text-xl opacity-75 w-full mt-2'>Trending Movies</div>

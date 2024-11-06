@@ -15,6 +15,11 @@ const Browse = () => {
   useMovies();
   useTv();
   usePeople();
+
+const mov = useSelector((store)=>store.movie.moviesResult)
+const tv = useSelector((store)=>store.movie.tvResults)
+const peo = useSelector((store)=>store.movie.peopleResults)
+if(!mov  || !tv || !peo) return  <Shimmer />
   
   return (
     <div className="w-screen bg-gradient-to-br from-slate-900 to-gray-700 pt-20 px-4 pb-20">
