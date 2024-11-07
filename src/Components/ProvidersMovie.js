@@ -5,6 +5,7 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import React, { useEffect, useState } from 'react';
 import { Navigation, Pagination, Scrollbar, A11y } from 'swiper/modules';
 import { throttle } from 'lodash';
+import MovieShimmer from './MovieShimmer';
 
 
 import 'swiper/css';
@@ -13,16 +14,11 @@ import 'swiper/css/navigation';
 import 'swiper/css/scrollbar';
 import "../index.css"
 
-
 const ProvidersMovie = () => {
-
-
     useProviders();
     const providers_data = useSelector((store) => store.movie.providers)
     const { results } = providers_data;
     const [count, setCount] = useState(0);
-
-    
 
     useEffect(
         () => {
@@ -49,7 +45,7 @@ const ProvidersMovie = () => {
         },
     []);
 
-    if (providers_data === "") return null
+    if (providers_data === "") return <MovieShimmer />
 
     return (
         <div className='w-screen h-[100px] flex  mb-5 justify-center items-center 

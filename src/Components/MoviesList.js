@@ -5,7 +5,6 @@ import { POSTER_URL, NO_IMAGE } from '../Constants/apiKey'
 
 const MoviesList = (props) => {
     const { poster_path } = props.data;
-    console.log("props",props)
     return (
         // <div className='w-[180px] h-[225px] xl:w-[240px] overflow-hidden rounded-lg '>
         <div className='overflow-hidden rounded-xl w-[150px] h-[225px]

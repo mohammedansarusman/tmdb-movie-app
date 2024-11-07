@@ -13,14 +13,17 @@ import ProvidersMovie from './ProvidersMovie'
 import Filters from './Filters'
 import ReleaseYear from './ReleaseYear'
 import VoteAverage from './VoteAverage'
+import MovieShimmer from './MovieShimmer'
 
 const Movies = () => {
   const dispatch = useDispatch();
   const moviesData = useSelector((store) => store.movie.moviesResult)
   const moviePage = useSelector((store) => store.movie.moviePage)
   const pos = useSelector((store) => store.filterItem.position)
+
   useMovies();
   useFilterMovies();
+
   
   const { results, total_pages } = moviesData;
 
@@ -31,7 +34,7 @@ const Movies = () => {
     moviePage < total_pages && dispatch(addMoviePage(moviePage + 1))
   }
   // the componenet will render after getting data from API
-  if (moviesData === "") return <Shimmer />
+  if(moviesData==='') return  <MovieShimmer />
 
   return (
     <div className='w-screen min-h-screen py-20 bg-gradient-to-br from-slate-800 to-red-950 flex flex-col items-center relative'>

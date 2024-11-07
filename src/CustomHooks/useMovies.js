@@ -4,9 +4,7 @@ import { useDispatch,useSelector } from 'react-redux'
 import { addMovies } from '../ReduxStore/moviesSlice'
 
 const useMovies = () =>{
-    console.log("useMovies rendered")
     const sheetNo = useSelector((store)=>store.movie.moviePage)
-    console.log("sheetNo",sheetNo)
     const dispatch = useDispatch();
     const fetchMovies = async () => {
         // const response = await fetch(MOVIES_URL+PAGE+sheetNo,API_OPTION)
