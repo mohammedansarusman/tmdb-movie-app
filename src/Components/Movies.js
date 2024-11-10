@@ -1,11 +1,11 @@
 import React from 'react'
 import { useDispatch, useSelector } from 'react-redux'
-import useMovies from '../CustomHooks/useMovies'
 import useFilterMovies from '../CustomHooks/useFilterMovies'
-import Shimmer from './Shimmer'
 import MoviesList from './MoviesList'
+import useProviders from "../CustomHooks/useProviders"
 
-import { addMoviePage } from '../ReduxStore/moviesSlice'
+
+import { addMoviePage, addMovieDetails } from '../ReduxStore/moviesSlice'
 import { changeScreen } from '../ReduxStore/filterSlice'
 
 import { Link } from 'react-router-dom'
@@ -17,12 +17,14 @@ import MovieShimmer from './MovieShimmer'
 
 const Movies = () => {
   const dispatch = useDispatch();
+  dispatch(addMovieDetails(""))
   const moviesData = useSelector((store) => store.movie.moviesResult)
   const moviePage = useSelector((store) => store.movie.moviePage)
   const pos = useSelector((store) => store.filterItem.position)
+  const movieProviders = useSelector((store) =>store.movie.providers)
 
-  useMovies();
   useFilterMovies();
+  useProviders();
 
   
   const { results, total_pages } = moviesData;
@@ -34,7 +36,7 @@ const Movies = () => {
     moviePage < total_pages && dispatch(addMoviePage(moviePage + 1))
   }
   // the componenet will render after getting data from API
-  if(moviesData==='') return  <MovieShimmer />
+  if(moviesData==='' || movieProviders==="") return  <MovieShimmer />
 
   return (
     <div className='w-screen min-h-screen py-20 bg-gradient-to-br from-slate-800 to-red-950 flex flex-col items-center relative'>

@@ -9,8 +9,9 @@ const useDetailsMovie = (movieId) =>{
     const fetchDetailsMovie = async(id) =>{
         const response = await fetch(`${DETAILS_MOVIE}${id}`,API_OPTION)
         const data = await response.json();
-        dispatch(addMovieDetails(data));
-
+        
+        setTimeout(()=>dispatch(addMovieDetails(data)),3000);
+    
     }
     useEffect(()=>{fetchDetailsMovie(id)},[])
 }

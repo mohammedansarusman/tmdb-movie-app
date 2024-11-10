@@ -2,11 +2,11 @@
 import React, { useState } from 'react'
 import useDetailsMovie from '../CustomHooks/useDetailsMovie';
 import { useSelector } from 'react-redux'
-import Shimmer from './Shimmer';
 import { useMovieVideo } from '../CustomHooks/useMovieVideo';
 import DetailsHeader from './DetailsHeader';
 import DetailsOverview from './DetailsOverview';
 import Trailer from './Trailer';
+import DetailsMovieShimmer from './DetailsMovieShimmer';
 
 const DetailsMovie = (props) => {
     const [loading, setLoading] = useState(false); // state variable using to play the trailer
@@ -17,7 +17,9 @@ const DetailsMovie = (props) => {
     useDetailsMovie(movieId); // api callinf for detailed movie info
     useMovieVideo(movieId); // api calling for trailer
 
-    if (movie_details === "") return <Shimmer />;
+    console.log("movie_details",movie_details);
+
+    if (movie_details === "") return <DetailsMovieShimmer />;
 
     return (
         <div className='w-screen min-h-screen py-20 bg-gradient-to-br from-slate-800 to-red-950 flex flex-col items-center gap-5

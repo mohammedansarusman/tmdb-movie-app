@@ -6,12 +6,12 @@ import { GoHome } from "react-icons/go";
 import { BiCameraMovie } from "react-icons/bi";
 import { GiTv } from "react-icons/gi";
 import { IoIosPeople } from "react-icons/io";
-import LongSearchBar from './LongSearchBar';
+// import LongSearchBar from './LongSearchBar';
 import { Link } from 'react-router-dom';
 
 const NavigationBar = () => {
   const searchBarColor = useSelector((store) => store.theme.searchColor);
-  const longSearchBarWidth = useSelector((store) => store.theme.longSearchBar);
+  // const longSearchBarWidth = useSelector((store) => store.theme.longSearchBar);
   const searchInput = useSelector((store) => store.theme.inputValue) || "";
   const dispatch = useDispatch();
   
@@ -25,7 +25,7 @@ const NavigationBar = () => {
   
   return (
     <div className=''>
-      {console.log("input value:",searchInput)}
+      {/* {console.log("input value:",searchInput)} */}
       <div className='w-full h-[1px] bg-orange-300 fixed z-20'></div>
       <div className="w-full h-[60px] bg-black flex-row items-center px-[3%] fixed z-10
                     sm:w-full sm:h-[60px] sm:flex-row sm:items-center sm:px-[3%] sm:fixed sm:z-10

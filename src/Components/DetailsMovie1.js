@@ -8,10 +8,10 @@ import DetailsHeader from './DetailsHeader';
 import DetailsOverview from './DetailsOverview';
 import Trailer from './Trailer';
 import { useParams } from 'react-router-dom';
+import DetailsMovieShimmer from './DetailsMovieShimmer';
 
 const DetailsMovie1 = () => {
     const { id } = useParams();
-    console.log("hello detals movie 1")
     const [loading, setLoading] = useState(false); // state variable using to play the trailer
     const movie_details = useSelector((store) => store.movie.movieDetails);
     const trailer_key = useSelector((store) => store.movie.videoKey); // key value of the trailer
@@ -20,7 +20,9 @@ const DetailsMovie1 = () => {
     useDetailsMovie(id); // api callinf for detailed movie info
     useMovieVideo(id); // api calling for trailer
 
-    if (movie_details === "") return <Shimmer />;
+    console.log("movie_details1", movie_details);
+
+    if (movie_details === "") return <DetailsMovieShimmer/>;
 
     return (
         <div className='w-screen min-h-screen py-20 bg-gradient-to-br from-slate-800 to-red-950 flex flex-col items-center gap-5

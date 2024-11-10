@@ -1,5 +1,4 @@
 //  Parent component: Movies.js
-// Click on Menu button from the 
 import React from 'react'
 import { POSTER_URL, NO_IMAGE } from '../Constants/apiKey'
 
