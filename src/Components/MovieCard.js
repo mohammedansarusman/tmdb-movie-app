@@ -1,6 +1,8 @@
 
 import React from 'react'
 import { POSTER_URL,NO_IMAGE } from '../Constants/apiKey';
+import { LazyLoadImage } from 'react-lazy-load-image-component';
+
 
 const MovieCard = (props) => {
   const { title, poster_path,original_name,profile_path } = props.film;
@@ -14,10 +16,11 @@ const MovieCard = (props) => {
                       xl:w-[200px] xl:h-[280px]'>
         {
           poster_path || profile_path ?
-             (<img 
+             (<LazyLoadImage
                 src = { POSTER_URL+(poster_path || profile_path)} 
               alt="movie poster"
               className='rounded-xl hover:scale-105 transition-transform duration-600 w-[100%] h-[100%]'
+              afterLoad={()=>console.log("done loading")}
             />) :
             (
             <img 

@@ -1,6 +1,7 @@
 //  Parent component: Movies.js
 import React from 'react'
 import { POSTER_URL, NO_IMAGE } from '../Constants/apiKey'
+import { LazyLoadImage } from 'react-lazy-load-image-component';
 
 const MoviesList = (props) => {
     const { poster_path } = props.data;
@@ -13,10 +14,11 @@ const MoviesList = (props) => {
                       xl:w-[230px] xl:h-[310px]'>
             {
                 poster_path ?
-                <img 
+                <LazyLoadImage 
                     src = { POSTER_URL+poster_path} 
                     alt="movie poster"
                     className='rounded-xl hover:scale-105 transition-transform duration-600 w-[100%] h-[100%]'
+                    afterLoad={()=>console.log("done loading")}
                 /> :
                 (
                     <img src={NO_IMAGE} alt="no poster available"

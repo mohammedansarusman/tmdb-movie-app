@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import useFilterMovies from '../CustomHooks/useFilterMovies'
 import MoviesList from './MoviesList'
@@ -17,7 +17,9 @@ import MovieShimmer from './MovieShimmer'
 
 const Movies = () => {
   const dispatch = useDispatch();
-  dispatch(addMovieDetails(""))
+  
+  useEffect(()=>{dispatch(addMovieDetails(""))},[])
+  
   const moviesData = useSelector((store) => store.movie.moviesResult)
   const moviePage = useSelector((store) => store.movie.moviePage)
   const pos = useSelector((store) => store.filterItem.position)
@@ -69,7 +71,7 @@ const Movies = () => {
       <div className=' flex flex-wrap px-2 gap-5 justify-center mt-[70px]'>
         {results.map((item) =>
           <Link to={`/details/${item.id}`} key={item.id}>
-            <MoviesList data={item} key={item.id} />
+            <MoviesList data={item}/>
           </Link>
         )}
       </div>
