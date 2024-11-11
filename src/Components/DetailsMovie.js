@@ -9,6 +9,7 @@ import Trailer from './Trailer';
 import DetailsMovieShimmer from './DetailsMovieShimmer';
 
 const DetailsMovie = (props) => {
+    
     const [loading, setLoading] = useState(false); // state variable using to play the trailer
     const movie_details = useSelector((store) => store.movie.movieDetails);
     const trailer_key = useSelector((store) => store.movie.videoKey); // key value of the trailer

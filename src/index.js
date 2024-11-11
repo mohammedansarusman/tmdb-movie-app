@@ -1,19 +1,22 @@
-import React from 'react';
+import React,{lazy, Suspense} from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './App';
-import Movies from './Components/Movies';
+// import Movies from './Components/Movies';
 import Browse from './Components/Browse';
 import Tv from './Components/Tv';
 import People from './Components/People';
 import Details from './Components/Details';
-import Search from './Components/Search';
+// import Search from './Components/Search';
 import DetailsMovie1 from './Components/DetailsMovie1';
 
 import reportWebVitals from './reportWebVitals';
 import { Provider } from 'react-redux';
 import appStore from './ReduxStore/appStore';
 import { createBrowserRouter,RouterProvider } from 'react-router-dom';
+
+const Movies = lazy(()=>import('./Components/Movies'))
+const Search = lazy(()=>import('./Components/Search'))
 
 const appRouter = createBrowserRouter(
   [
@@ -27,7 +30,7 @@ const appRouter = createBrowserRouter(
         },
         {
           path:"/movies",
-          element: <Movies />,
+          element: <Suspense fallback={<h1>Loading..</h1>}><Movies /></Suspense>,
         },
         {
           path:"/tv",
@@ -47,7 +50,7 @@ const appRouter = createBrowserRouter(
         },
         {
           path:"/search",
-          element: <Search />,
+          element: <Suspense fallback={<h1>Loading...</h1>}><Search /></Suspense>,
         }
       ]
     },

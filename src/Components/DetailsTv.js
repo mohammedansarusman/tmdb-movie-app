@@ -1,14 +1,21 @@
 import React from 'react'
 import useDetailsTv from '../CustomHooks/useDetailsTv'
-import { useSelector } from 'react-redux';
+import { useSelector, useDispatch } from 'react-redux';
 import DetailsHeader from './DetailsHeader';
-import Shimmer from './Shimmer';
+// import Shimmer from './Shimmer';
 import DetailsOverview from './DetailsOverview';
-import { useState } from'react';
+import { useState, useEffect } from'react';
 import useTvVideo from '../Constants/useTvVideo';
 import Trailer from './Trailer';
+import DetailsMovieShimmer from './DetailsMovieShimmer';
+import { addTvDetails } from '../ReduxStore/moviesSlice'
 
 const DetailsTv = (props) => {
+    const dispatch = useDispatch();
+    useEffect(
+        ()=>{dispatch(addTvDetails(""))},[]
+    )
+  
     const { tvId } = props;
     const [loading, setLoading] = useState(false); // state variable using to play the trailer
 
@@ -20,7 +27,7 @@ const DetailsTv = (props) => {
     useTvVideo(tvId) // api calling for trailer
 
 
-    if (results === "") return <Shimmer />;
+    if (results === "") return <DetailsMovieShimmer />;
 
     return (
         <div className='w-screen min-h-screen py-20 bg-gradient-to-br from-slate-800 to-red-950 flex flex-col items-center gap-5

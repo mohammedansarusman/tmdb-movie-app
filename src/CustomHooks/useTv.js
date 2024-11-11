@@ -14,6 +14,6 @@ const useTV = () => {
     }
     useEffect(() => {
         fetchTV()
-    })
+    },[])
 }
 export default useTV;
