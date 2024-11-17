@@ -10,7 +10,6 @@ const useTV = () => {
         const response = await fetch(TV_URL, API_OPTION)
         const data = await response.json()
         dispatch(addTv(data))
-        // console.log("tv shows",data)
     }
     useEffect(() => {
         fetchTV()

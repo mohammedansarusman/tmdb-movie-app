@@ -1,10 +1,14 @@
+// Parent component  -  index.js
 import React, { useEffect } from 'react'
+
 import MoviesHome from './MoviesHome';
 import TvHome from './TvHome';
+import PeopleHome from './PeopleHome';
+
 import useTv from '../CustomHooks/useTv'
 import useMovies from '../CustomHooks/useMovies';
 import usePeople from '../CustomHooks/usePeople';
-import PeopleHome from './PeopleHome';
+
 import Shimmer from './Shimmer';
 import { useSelector, useDispatch } from 'react-redux';
 import { addMovieDetails } from '../ReduxStore/moviesSlice'
@@ -14,6 +18,7 @@ import { addMovieDetails } from '../ReduxStore/moviesSlice'
 const Browse = () => {
   const dispatch = useDispatch();
   
+  // Custom hooks for API calling
   useMovies();
   useTv();
   usePeople();

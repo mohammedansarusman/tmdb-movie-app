@@ -68,3 +68,19 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/d
 ### `npm run build` fails to minify
 
 This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+
+### My Notes
+I'm very excited to share my latest project. this is basically like movie application like netflix/Amazon prime. I didn't copy the same clone.
+Through this project I got chance to practice lot of different things in Javascript and React JS. 
+
+- react-icons 
+- redux
+- react-router-dom
+- custom hooks
+- react hooks - useEffect()
+- fetch API
+- shimmer
+- LazyLoadImage library 
+
+
+

@@ -1,16 +1,12 @@
+// Parent component - Browse
 import React from 'react'
 import { useSelector } from 'react-redux';
 import MovieCard from './MovieCard'
 import { Link } from 'react-router-dom';
 
-
-
-
 const TvHome = () => {
     const tvData = useSelector((store)=>store.movie.tvResults)
     const {results} = tvData;
-
-    // the componenet will render after getting data from API
     if(tvData==="") return null 
   return (
     <div>
@@ -30,6 +26,4 @@ const TvHome = () => {
     </div>
   )
 }
-
 export default TvHome
-// This component will export to Browse compenent

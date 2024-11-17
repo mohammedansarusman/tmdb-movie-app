@@ -2,14 +2,11 @@ import React,{lazy, Suspense} from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './App';
-// import Movies from './Components/Movies';
 import Browse from './Components/Browse';
 import Tv from './Components/Tv';
-import People from './Components/People';
+import Contact from './Components/Contact';
 import Details from './Components/Details';
-// import Search from './Components/Search';
 import DetailsMovie1 from './Components/DetailsMovie1';
-
 import reportWebVitals from './reportWebVitals';
 import { Provider } from 'react-redux';
 import appStore from './ReduxStore/appStore';
@@ -37,8 +34,8 @@ const appRouter = createBrowserRouter(
           element: <Tv />,
         },
         {
-          path:"/people",
-          element: <People />,
+          path:"/contact",
+          element: <Contact />,
         },
         {
           path: "/details/:session/:id",

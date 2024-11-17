@@ -4,7 +4,7 @@ const themeSlice = createSlice({
     name:"theme",
     initialState: {
         searchColor: "bg-gray-950",
-        longSearchBar: false,
+        // longSearchBar: false,
         inputValue:"",
     },
     reducers:{
@@ -12,9 +12,9 @@ const themeSlice = createSlice({
         changeColor:(state,action)=>{
             state.searchColor = action.payload;
         },
-        changeSearchBar:(state,action)=>{
-            state.longSearchBar = action.payload;
-        },
+        // changeSearchBar:(state,action)=>{
+        //     state.longSearchBar = action.payload;
+        // },
         
         // the value/string entering in search bar
         changeInputValue:(state,action)=>{
