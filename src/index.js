@@ -4,6 +4,7 @@ import './index.css';
 import App from './App';
 import Browse from './Components/Browse';
 import Tv from './Components/Tv';
+import Television from './Components/Television';
 import Contact from './Components/Contact';
 import Details from './Components/Details';
 import DetailsMovie1 from './Components/DetailsMovie1';
@@ -31,7 +32,7 @@ const appRouter = createBrowserRouter(
         },
         {
           path:"/tv",
-          element: <Tv />,
+          element: <Television />,
         },
         {
           path:"/contact",

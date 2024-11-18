@@ -23,6 +23,13 @@ export const FILTER_CRITERIA_2 = "-01-01&release_date.lte="
 export const FILTER_CRITERIA_3 = "-12-31&sort_by=popularity.desc"
 export const FILTER_CRITERIA_4 ="&vote_average.gte="
 export const FILTER_CRITERIA_5 = "&vote_average.lte="
+export const FILTER_TV = "https://api.themoviedb.org/3/discover/tv?include_adult=false&include_video=false&language=en-US&"
+export const FILTER_TV_CRITERIA_1 = "&air_date.gte="
+export const FILTER_TV_CRITERIA_2 = "-01-01&air_date.lte="
+export const FILTER_TV_CRITERIA_3 = "-12-31&sort_by=popularity.desc"
+export const FILTER_TV_CRITERIA_4 ="&vote_average.gte="
+export const FILTER_TV_CRITERIA_5 = "&vote_average.lte="
+
 export const SEARCH1 = "https://api.themoviedb.org/3/search/multi?query="
 export const SEARCH2 = "&include_adult=false&language=en-US"
 

@@ -1,12 +1,11 @@
 import React, { useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
-import useFilterMovies from '../CustomHooks/useFilterMovies'
+import useFilterTv from '../CustomHooks/useFilterTv'
 import MoviesList from './MoviesList'
 import useProviders from "../CustomHooks/useProviders"
 
 
 import { addMoviePage, addMovieDetails } from '../ReduxStore/moviesSlice'
-
 import { changeScreen } from '../ReduxStore/filterSlice'
 
 import { Link } from 'react-router-dom'
@@ -16,7 +15,7 @@ import ReleaseYear from './ReleaseYear'
 import VoteAverage from './VoteAverage'
 import MovieShimmer from './MovieShimmer'
 
-const Movies = () => {
+const Television = () => {
   const dispatch = useDispatch();
   
   useEffect(()=>{dispatch(addMovieDetails(""))},[])
@@ -26,9 +25,10 @@ const Movies = () => {
   const pos = useSelector((store) => store.filterItem.position)
   const movieProviders = useSelector((store) =>store.movie.providers)
 
-  useFilterMovies();
+//   useFilterMovies();
+    
   useProviders();
-
+  useFilterTv();  
   
   const { results, total_pages } = moviesData;
 
@@ -94,4 +94,4 @@ const Movies = () => {
   )
 }
 
-export default Movies
+export default Television
