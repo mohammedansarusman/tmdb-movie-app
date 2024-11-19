@@ -11,7 +11,6 @@ export const useMovieVideo = (movieId) => {
         const data = await response.json();
         const { results } = data;
         const videoData = results.filter((item) => item.name === "Official Trailer" || "Trailer");
-        console.log("videoData", videoData)
         dispatch(addVideoKey(videoData[0]?.key));
 
     }

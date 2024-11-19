@@ -10,13 +10,8 @@ const useTvVideo = (idValue) =>{
         const response = await fetch(DETAILS_TV + id + VIDEO_URL, API_OPTION);
         const data = await response.json();
         const { results } = data;
-        console.log("results1",results)
-
         const videoData = results.filter((item) => item.name === "Official Trailer" || "Trailer");
-        console.log("results",videoData)
-
         dispatch(addVideoKey(videoData[0]?.key));
-
     }
     useEffect(() => { fetchVideo(id) }, [])
 

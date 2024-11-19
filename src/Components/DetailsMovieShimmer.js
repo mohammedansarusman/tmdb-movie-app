@@ -23,10 +23,6 @@ const DetailsMovieShimmer = () => {
         <div className='w-[200px] h-[30px] bg-gray-500 rounded-lg'></div>
         <div className='w-[200px] h-[30px] bg-gray-500 rounded-lg'></div>
         <div className='w-[200px] h-[30px] bg-gray-500 rounded-lg'></div>
-
-
-
-
     </div>
   )
 }

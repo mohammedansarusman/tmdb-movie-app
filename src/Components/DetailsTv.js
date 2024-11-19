@@ -2,7 +2,6 @@ import React from 'react'
 import useDetailsTv from '../CustomHooks/useDetailsTv'
 import { useSelector, useDispatch } from 'react-redux';
 import DetailsHeader from './DetailsHeader';
-// import Shimmer from './Shimmer';
 import DetailsOverview from './DetailsOverview';
 import { useState, useEffect } from'react';
 import useTvVideo from '../Constants/useTvVideo';
@@ -44,7 +43,6 @@ const DetailsTv = (props) => {
                 </button>
                 { loading && <Trailer data = {trailer_key} /> }
                 <h1 className='font-semibold text-xl underline underline-offset-2 text-white opacity-70'>Production Companies</h1>
-                {console.log(production_companies)}
                 <div className='flex flex-col items-center'>
                     {
                         production_companies.map(

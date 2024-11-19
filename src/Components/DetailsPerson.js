@@ -1,23 +1,16 @@
 import React from 'react'
 import { useSelector } from 'react-redux'
 import useSearchPeople from '../CustomHooks/useSearchPeople';
-import MovieCard from './MovieCard';
-import { Link } from 'react-router-dom';
 import { POSTER_URL, NO_IMAGE } from '../Constants/apiKey';
 
 // DetailsPerson component calling from Details
 const DetailsPerson = (props) => {
     const { pId } = props;
-    console.log("person id", pId)
     useSearchPeople(pId) // fetch people data on component mount
 
     const data = useSelector((store) => store.movie.searchPeople)
     // const { results } = data;
-    console.log("data",data)
-
     if (data === "") return null
-    // const person = results.find((persons) => persons.id === parseInt(pId));
-    // console.log("person details", person);
 
     const { profile_path,  name, known_for, known_for_department } = data;
     return (

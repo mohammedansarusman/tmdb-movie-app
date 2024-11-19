@@ -6,7 +6,6 @@ import { LazyLoadImage } from 'react-lazy-load-image-component';
 const MoviesList = (props) => {
     const { poster_path } = props.data;
     return (
-        // <div className='w-[180px] h-[225px] xl:w-[240px] overflow-hidden rounded-lg '>
         <div className='overflow-hidden rounded-xl w-[150px] h-[225px]
                       sm:w-[160px] sm:h-[235px]
                       md:w-[170px] md:h-[260px]
@@ -26,12 +25,6 @@ const MoviesList = (props) => {
                     />
                 )  // End of ternary operator for poster_path condition.
             }
-            {/* <img
-                src={POSTER_URL+poster_path || NO_IMAGE}
-                alt="movie"
-                className='hover:scale-105 transition-transform duration-600 w-[100%] h-[100%]'
-            /> */}
-            
         </div>
     )
 }

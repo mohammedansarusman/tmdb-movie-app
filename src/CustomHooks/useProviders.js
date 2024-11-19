@@ -8,7 +8,6 @@ const useProviders = () =>{
     const fetchProviders = async()=>{
         const response = await fetch(PROVIDERS,API_OPTION);
         const data = await response.json();
-        // console.log("data from providers",data)
         dispatch(addProviders(data))
     }
     useEffect(()=>{fetchProviders()},[]);

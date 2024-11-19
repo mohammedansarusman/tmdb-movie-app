@@ -19,7 +19,4 @@ const Details = () => {
     </div>
   )
 }
-
 export default Details;
-
-// className='w-screen h-screen flex text-black justify-center items-center'

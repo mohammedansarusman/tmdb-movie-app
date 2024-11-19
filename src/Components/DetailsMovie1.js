@@ -2,7 +2,6 @@
 import React, { useState } from 'react'
 import useDetailsMovie from '../CustomHooks/useDetailsMovie';
 import { useSelector } from 'react-redux'
-import Shimmer from './Shimmer';
 import { useMovieVideo } from '../CustomHooks/useMovieVideo';
 import DetailsHeader from './DetailsHeader';
 import DetailsOverview from './DetailsOverview';

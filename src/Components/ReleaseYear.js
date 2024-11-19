@@ -1,17 +1,12 @@
 import React from 'react'
 import MultiRangeSlider from "multi-range-slider-react";
-import { FaBorderNone } from 'react-icons/fa';
 import { useSelector,useDispatch } from 'react-redux';
 import { changeStartYear, changeEndYear, changeStartYear2, changeEndYear2 } from '../ReduxStore/filterSlice';
 // <ReleaseYear /> calling from <Movies />
-
-
 const ReleaseYear = () => {
-  
   const startYearValue = useSelector((store)=>store.filterItem.startYear);
   const endYearValue = useSelector((store)=>store.filterItem.endYear);
   const dispatch = useDispatch();
-
 
   const handleInput = (e) => {
       dispatch(changeStartYear(e.minValue))

@@ -3,8 +3,6 @@ import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './App';
 import Browse from './Components/Browse';
-import Tv from './Components/Tv';
-import Television from './Components/Television';
 import Contact from './Components/Contact';
 import Details from './Components/Details';
 import DetailsMovie1 from './Components/DetailsMovie1';
@@ -15,6 +13,7 @@ import { createBrowserRouter,RouterProvider } from 'react-router-dom';
 
 const Movies = lazy(()=>import('./Components/Movies'))
 const Search = lazy(()=>import('./Components/Search'))
+const Television = lazy(()=>import('./Components/Television'))
 
 const appRouter = createBrowserRouter(
   [
@@ -32,7 +31,7 @@ const appRouter = createBrowserRouter(
         },
         {
           path:"/tv",
-          element: <Television />,
+          element: <Suspense fallback = {<h1>Loading...</h1>}><Television /></Suspense>,
         },
         {
           path:"/contact",
