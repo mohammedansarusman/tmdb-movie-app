@@ -8,21 +8,21 @@ const Contact = () => {
         <h1 className='text-xl font-semibold'>Let’s get in touch.</h1>
         <p className='mt-[20px]'>Simply select your type of inquiry below and we’ll let the appropriate folks know.</p>
       </div>
-      <form className='text-white opacity-80 mt-[50px] w-[96%] sm:w-[90%] md:w-[75%] lg:w-[60%] xl:w-[50%]'> 
+      <form className='mt-[50px] w-[96%] sm:w-[90%] md:w-[75%] lg:w-[60%] xl:w-[50%]'> 
         <div className='flex flex-col gap-2'>
-          <h1>Name <span className='text-red-500'>*</span></h1>
-          <input type='text' className='w-full p-3 rounded-md border-none' placeholder='Enter your name' data-testid='name-input'/>
+          <h1 className='text-white opacity-50'>Name <span className='text-red-500'>*</span></h1>
+          <input type='text' className='w-full p-3 rounded-md border-none text-black' placeholder='Enter your name' data-testid='name-input'/>
           <h1 className='text-white opacity-50'>First</h1>
-          <input type='text' className='w-full p-3 rounded-md border-none' placeholder='Enteryourname' />
+          <input type='text' className='w-full p-3 rounded-md border-none text-black' placeholder='Enteryourname' />
           <h1 className = 'text-white opacity-50'>Last</h1>
           <h1>Company</h1>
-          <input type='text' className='w-full p-3 rounded-md border-none' />
+          <input type='text' className='w-full p-3 rounded-md border-none text-black' />
           <h1>Phone</h1>
-          <input type='text' className='w-full p-3 rounded-md border-none' />
+          <input type='text' className='w-full p-3 rounded-md border-none text-black' />
           <h1>Email <span className='text-red-500'>*</span></h1>
-          <input type='email' className='w-full p-3 rounded-md border-none' />
+          <input type='email' className='w-full p-3 rounded-md border-none text-black' />
           <h1>Message <span className='text-red-500'>*</span></h1>
-          <textarea className='w-full p-3 rounded-md border-none' rows='5' />
+          <textarea className='w-full p-3 rounded-md border-none text-black' rows='5' />
         </div>
         <button className='px-[20px] h-[40px] bg-orange-400 rounded-full mt-4 font-bold'>Submit</button>
       </form>
