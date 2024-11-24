@@ -15,13 +15,13 @@ const Contact = () => {
           <h1 className='text-white opacity-50'>First</h1>
           <input type='text' className='w-full p-3 rounded-md border-none text-black' placeholder='Enteryourname' />
           <h1 className = 'text-white opacity-50'>Last</h1>
-          <h1>Company</h1>
+          <h1 className = 'text-white opacity-50'>Company</h1>
           <input type='text' className='w-full p-3 rounded-md border-none text-black' />
-          <h1>Phone</h1>
+          <h1 className = 'text-white opacity-50'>Phone</h1>
           <input type='text' className='w-full p-3 rounded-md border-none text-black' />
-          <h1>Email <span className='text-red-500'>*</span></h1>
+          <h1 className = 'text-white opacity-50'>Email <span className='text-red-500'>*</span></h1>
           <input type='email' className='w-full p-3 rounded-md border-none text-black' />
-          <h1>Message <span className='text-red-500'>*</span></h1>
+          <h1 className = 'text-white opacity-50'>Message <span className='text-red-500'>*</span></h1>
           <textarea className='w-full p-3 rounded-md border-none text-black' rows='5' />
         </div>
         <button className='px-[20px] h-[40px] bg-orange-400 rounded-full mt-4 font-bold'>Submit</button>
