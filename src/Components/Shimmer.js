@@ -1,5 +1,6 @@
 import React from 'react'
 import HomeShimmer from './HomeShimmer'
+// Calling from <Browse />
 
 const Shimmer = () => {
   return (

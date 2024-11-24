@@ -3,6 +3,7 @@ import { useEffect } from "react";
 import { useDispatch } from "react-redux";
 import { addVideoKey } from "../ReduxStore/moviesSlice";
 
+// Calling from <DetailsMovie />
 export const useMovieVideo = (movieId) => {
     const dispatch = useDispatch();
     const id = movieId;

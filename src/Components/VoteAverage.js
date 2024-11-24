@@ -2,6 +2,7 @@ import React from "react";
 import MultiRangeSlider from "multi-range-slider-react";
 import { useSelector, useDispatch } from "react-redux";
 import { changeStartRating, changeEndRating, changeStartRating2, changeEndRating2 } from "../ReduxStore/filterSlice";
+// <VoteAverage /> calling from <Movies />
 
 const VoteAverage = () => {
   const dispatch = useDispatch();

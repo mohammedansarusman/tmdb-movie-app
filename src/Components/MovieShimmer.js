@@ -1,7 +1,7 @@
 import React from "react";
 import { useEffect, useState } from "react";
 import { throttle } from 'lodash';
-
+// Calling from <Movies />
 const MovieShimmer = () => {
     const [count, setCount] = useState(0);
     useEffect(() => {

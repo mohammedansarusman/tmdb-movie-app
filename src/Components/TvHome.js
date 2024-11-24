@@ -1,8 +1,8 @@
-// Parent component - Browse
 import React from 'react'
 import { useSelector } from 'react-redux';
 import MovieCard from './MovieCard'
 import { Link } from 'react-router-dom';
+// Calling from <Browse />
 
 const TvHome = () => {
     const tvData = useSelector((store)=>store.movie.tvResults)

@@ -3,6 +3,7 @@ import { useSelector,useDispatch } from "react-redux";
 import { addMovies } from "../ReduxStore/moviesSlice";
 import { useEffect } from "react";
 
+// Calling from <Movies />
 const useFilterMovies = ()=>{
     const dispatch = useDispatch();
     const sheetNo = useSelector((store)=>store.movie.moviePage)
@@ -15,6 +16,8 @@ const useFilterMovies = ()=>{
         const data = await response.json()
         dispatch(addMovies(data))
     } 
-    useEffect(()=>{fetchMovies()},[sheetNo,startYear,endYear,startrating,endrating])    
+    useEffect(()=>{
+        fetchMovies()
+    },[sheetNo,startYear,endYear,startrating,endrating])    
 }
 export default useFilterMovies;

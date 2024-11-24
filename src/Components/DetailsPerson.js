@@ -3,13 +3,12 @@ import { useSelector } from 'react-redux'
 import useSearchPeople from '../CustomHooks/useSearchPeople';
 import { POSTER_URL, NO_IMAGE } from '../Constants/apiKey';
 
-// DetailsPerson component calling from Details
+// calling from <Details />
 const DetailsPerson = (props) => {
     const { pId } = props;
     useSearchPeople(pId) // fetch people data on component mount
 
     const data = useSelector((store) => store.movie.searchPeople)
-    // const { results } = data;
     if (data === "") return null
 
     const { profile_path,  name, known_for, known_for_department } = data;

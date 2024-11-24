@@ -1,4 +1,4 @@
-// Parent component  - MovieHome / TvHome / PeopleHome
+// Parent component  - <MovieHome /> <TvHome /> <PeopleHome />
 import React from "react";
 import { POSTER_URL, NO_IMAGE } from "../Constants/apiKey";
 import { LazyLoadImage } from "react-lazy-load-image-component";
@@ -31,7 +31,6 @@ const MovieCard = (props) => {
           />
         )}
       </div>
-
       <div className="text-white flex items-center text-md font-semibold w-[150px] h-[30px] ">
         <h1 className="truncate">
           {/* Here the title is using MovieHome and original_name  is using in TvHome */}
@@ -41,6 +40,4 @@ const MovieCard = (props) => {
     </div>
   );
 };
-
 export default MovieCard;
-// This compenent 'MovieCard' will implement in MovieHome & TvHome component

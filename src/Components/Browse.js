@@ -19,15 +19,17 @@ const Browse = () => {
   const dispatch = useDispatch();
   
   // Custom hooks for API calling
-  useMovies();
-  useTv();
-  usePeople();
+  useMovies(); // Trending movies
+  useTv();  // Popular TV shows
+  usePeople(); // Popular peoples
 
   useEffect(
     ()=>{
       dispatch(addMovieDetails(""))},[]
+      // reason - Once u selected any movie card and navigate to another movie card. the shimmer component should execute between these time frame.
   )
   
+  //  retrieve data fro redux store
   const mov = useSelector((store)=>store.movie.moviesResult)
   const tv = useSelector((store)=>store.movie.tvResults)
   const peo = useSelector((store)=>store.movie.peopleResults)

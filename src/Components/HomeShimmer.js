@@ -1,5 +1,5 @@
 import React from 'react'
-
+// Calling from <Shimmer />
 const HomeShimmer = () => {
   return (
     <div className='flex gap-3'>

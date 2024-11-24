@@ -1,7 +1,7 @@
 import React from 'react'
 import { POSTER_URL, NO_IMAGE } from '../Constants/apiKey';
 
-
+// Calling from  <Details />
 const DetailsHeader = (props) => {
   const { poster_path, title, genres, original_name } = props.data;
   const genres_text = [];

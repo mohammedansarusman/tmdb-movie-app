@@ -5,7 +5,7 @@ import Shimmer from './Shimmer'
 import MovieCard from './MovieCard'
 import { Link } from 'react-router-dom'
 import { addMoviePage } from '../ReduxStore/moviesSlice'
-
+ // Calling from <NavigationBar />
 
 
 

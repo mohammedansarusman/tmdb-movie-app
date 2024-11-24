@@ -1,14 +1,11 @@
 import React, { useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import useFilterMovies from '../CustomHooks/useFilterMovies'
-import MoviesList from './MoviesList'
+// import MoviesList from './MoviesList'
+import MovieCard from './MovieCard'
 import useProviders from "../CustomHooks/useProviders"
-
-
 import { addMoviePage, addMovieDetails } from '../ReduxStore/moviesSlice'
-
 import { changeScreen } from '../ReduxStore/filterSlice'
-
 import { Link } from 'react-router-dom'
 import ProvidersMovie from './ProvidersMovie'
 import Filters from './Filters'
@@ -16,6 +13,7 @@ import ReleaseYear from './ReleaseYear'
 import VoteAverage from './VoteAverage'
 import MovieShimmer from './MovieShimmer'
 
+// Calling from <NavigationBar />
 const Movies = () => {
   const dispatch = useDispatch();
   
@@ -54,7 +52,6 @@ const Movies = () => {
           <div className='w-[90%] h-[25px] text-right text-green-400 cursor-pointer'
             onClick={() => {
               dispatch(changeScreen(100))
-              // call custom hook for fetching data
             }}>
             Done
           </div>
@@ -71,8 +68,8 @@ const Movies = () => {
       {/* Movie List */}
       <div className=' flex flex-wrap px-2 gap-5 justify-center mt-[70px]'>
         {results.map((item) =>
-          <Link to={`/details/${item.id}`} key={item.id}>
-            <MoviesList data={item}/>
+          <Link to={`/details/movie/${item.id}`} key={item.id}>
+            <MovieCard film={item}/>
           </Link>
         )}
       </div>

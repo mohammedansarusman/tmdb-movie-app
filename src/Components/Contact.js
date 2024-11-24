@@ -1,5 +1,5 @@
 import React from 'react'
-
+// Calling from index.js and <NavigationBar />
 const Contact = () => {
   return (
     <div className='w-screen min-h-screen py-20 bg-gradient-to-br from-slate-800 to-white-950 flex flex-col items-center relative'>

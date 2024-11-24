@@ -30,7 +30,7 @@ const Filters = () => {
         </div>
         <div className='flex items-center w-[50%] justify-center'>
             <button 
-                className='w-[100px]  text-white'
+                className='w-[100px]  text-white hover:text-orange-500'
                 onClick={handleReset}
             >X Reset</button>
         </div>

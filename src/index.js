@@ -5,7 +5,7 @@ import App from './App';
 import Browse from './Components/Browse';
 import Contact from './Components/Contact';
 import Details from './Components/Details';
-import DetailsMovie1 from './Components/DetailsMovie1';
+// import DetailsMovie1 from './Components/DetailsMovie1';
 import reportWebVitals from './reportWebVitals';
 import { Provider } from 'react-redux';
 import appStore from './ReduxStore/appStore';
@@ -38,13 +38,14 @@ const appRouter = createBrowserRouter(
           element: <Contact />,
         },
         {
+          // here session is movie/tv/people this will pass to <Details /> component
           path: "/details/:session/:id",
           element: <Details />,
         },
-        {
-          path:"/details/:id",
-          element: <DetailsMovie1 />,
-        },
+        // {
+        //   path:"/details/:id",
+        //   element: <DetailsMovie1 />,
+        // },
         {
           path:"/search",
           element: <Suspense fallback={<h1>Loading...</h1>}><Search /></Suspense>,

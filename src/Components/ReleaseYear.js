@@ -7,6 +7,7 @@ const ReleaseYear = () => {
   const startYearValue = useSelector((store)=>store.filterItem.startYear);
   const endYearValue = useSelector((store)=>store.filterItem.endYear);
   const dispatch = useDispatch();
+  const currentYear = new Date().getFullYear();
 
   const handleInput = (e) => {
       dispatch(changeStartYear(e.minValue))
@@ -22,7 +23,7 @@ const ReleaseYear = () => {
         <MultiRangeSlider
           // disabled={true}
           min={1990}
-          max={2024}
+          max={currentYear}
           label={false}
           ruler={false}
           step={1}

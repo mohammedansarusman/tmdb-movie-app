@@ -10,7 +10,6 @@ const useSearch = () =>{
     const fetchSearch = async () => {
         const response = await fetch(SEARCH1+searchBarValue+SEARCH2+PAGE+sheetNo,API_OPTION)
         const data = await response.json();
-        console.log("searchData",data);
         dispatch(addSearchResult(data));
     } 
     useEffect(()=>{fetchSearch()},[sheetNo,searchBarValue]) 

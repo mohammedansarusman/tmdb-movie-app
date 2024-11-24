@@ -1,7 +1,8 @@
 import React, { useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import useFilterTv from '../CustomHooks/useFilterTv'
-import MoviesList from './MoviesList'
+// import MoviesList from './MoviesList'
+import MovieCard from './MovieCard'
 import useProviders from "../CustomHooks/useProviders"
 
 
@@ -20,7 +21,7 @@ const Television = () => {
   
   useEffect(()=>{dispatch(addMovieDetails(""))},[])
   
-  const moviesData = useSelector((store) => store.movie.moviesResult)
+  const moviesData = useSelector((store) => store.movie.tvResults)
   const moviePage = useSelector((store) => store.movie.moviePage)
   const pos = useSelector((store) => store.filterItem.position)
   const movieProviders = useSelector((store) =>store.movie.providers)
@@ -29,7 +30,6 @@ const Television = () => {
     
   useProviders();
   useFilterTv();  
-  
   const { results, total_pages } = moviesData;
 
   const previousPage = () => {
@@ -72,7 +72,7 @@ const Television = () => {
       <div className=' flex flex-wrap px-2 gap-5 justify-center mt-[70px]'>
         {results.map((item) =>
           <Link to={`/details/tv/${item.id}`} key={item.id}>
-            <MoviesList data={item}/>
+            <MovieCard film={item}/>
           </Link>
         )}
       </div>

@@ -1,10 +1,8 @@
 import React from "react";
-
 import { FaSearch } from "react-icons/fa";
 import { BiCameraMovie } from "react-icons/bi";
 import { GiTv } from "react-icons/gi";
 import { IoIosPeople } from "react-icons/io";
-
 import { useSelector, useDispatch } from "react-redux";
 import {
   changeColor,

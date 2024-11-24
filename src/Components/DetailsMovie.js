@@ -8,7 +8,7 @@ import DetailsHeader from "./DetailsHeader";
 import DetailsOverview from "./DetailsOverview";
 import Trailer from "./Trailer";
 import DetailsMovieShimmer from "./DetailsMovieShimmer";
-
+// Calling from <Details />
 const DetailsMovie = (props) => {
   const [loading, setLoading] = useState(false); // state variable using to play the trailer
   const movie_details = useSelector((store) => store.movie.movieDetails);
@@ -45,7 +45,7 @@ const DetailsMovie = (props) => {
         <DetailsOverview data={overview} />
         <button
           className="w-[75%] h-[50px] bg-slate-100 font-semibold opacity-80 text-gray-800 rounded-full sm:w-[50%] lg:w-[40%] xl:w-[30%]"
-          onClick={() => setLoading(true)}
+          onClick={() => !loading ? setLoading(true) : setLoading(false)}
         >
           Play Trailer
         </button>
