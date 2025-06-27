@@ -13,6 +13,7 @@ Through this project, I had the opportunity to deepen my knowledge of JavaScript
 ✅ MultiRangeSlider Library: Implemented a dynamic slider for filtering movies by release year.
 ✅ Swiper Library: Built a sleek carousel for showcasing movie providers.
 This journey has been an incredible learning experience, and I'm proud of how far I've come. 🚀
+
 💡 Tech Stack:
 React.js
 JavaScript
