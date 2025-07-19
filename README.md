@@ -1,23 +1,23 @@
-I'm thrilled to showcase my recent project, a movie application clone inspired by platforms like Netflix and Amazon Prime. While it’s not an exact replica, I’ve added my own unique touch to build it from scratch and incorporate personalized features.
-Through this project, I had the opportunity to deepen my knowledge of JavaScript and React.js, honing skills in both fundamental and advanced concepts.
-✨ Key Highlights of the Project:
-✅ Lazy Loading & Dynamic Bundling: Optimized website performance by reducing load times and improving the user experience.
-✅ State Management: Leveraged Redux for seamless data handling.
-✅ Routing: Used React Router DOM for smooth navigation.
-✅ Custom Hooks: Built reusable hooks to enhance code modularity.
-✅ React Hooks: Hands-on experience with hooks like useEffect() for lifecycle management.
-✅ Data Fetching: Integrated the Fetch API for real-time content updates.
-✅ Shimmer Effect: Added a skeleton loader for enhanced visual feedback during content loading.
-✅ LazyLoadImage Library: Efficient image loading to further boost performance.
-✅ React-Icons: For visually appealing UI components.
-✅ MultiRangeSlider Library: Implemented a dynamic slider for filtering movies by release year.
-✅ Swiper Library: Built a sleek carousel for showcasing movie providers.
-This journey has been an incredible learning experience, and I'm proud of how far I've come. 🚀
+I'm thrilled to showcase my recent project, a movie application clone inspired by platforms like Netflix and Amazon Prime. While it’s not an exact replica, I’ve added my own unique touch to build it from scratch and incorporate personalized features.  
+Through this project, I had the opportunity to deepen my knowledge of JavaScript and React.js, honing skills in both fundamental and advanced concepts.  
+✨ Key Highlights of the Project:  
+✅ Lazy Loading & Dynamic Bundling: Optimized website performance by reducing load times and improving the user experience.  
+✅ State Management: Leveraged Redux for seamless data handling.  
+✅ Routing: Used React Router DOM for smooth navigation.  
+✅ Custom Hooks: Built reusable hooks to enhance code modularity.  
+✅ React Hooks: Hands-on experience with hooks like useEffect() for lifecycle management.  
+✅ Data Fetching: Integrated the Fetch API for real-time content updates.  
+✅ Shimmer Effect: Added a skeleton loader for enhanced visual feedback during content loading.  
+✅ LazyLoadImage Library: Efficient image loading to further boost performance.  
+✅ React-Icons: For visually appealing UI components.  
+✅ MultiRangeSlider Library: Implemented a dynamic slider for filtering movies by release year.  
+✅ Swiper Library: Built a sleek carousel for showcasing movie providers.  
+This journey has been an incredible learning experience, and I'm proud of how far I've come. 🚀  
 
-💡 Tech Stack:
-React.js
-JavaScript
-Tailwind CSS
+💡 Tech Stack:  
+React.js  
+JavaScript  
+Tailwind CSS  
 
 <img width="1470" alt="OK_1 3" src="https://github.com/user-attachments/assets/923cac38-3190-47c0-90b8-7c74f5af8fbf" />
 <img width="1470" alt="OK_1 5" src="https://github.com/user-attachments/assets/b7388097-d86f-4dbf-9f07-ba4b8fdd8ad2" />
